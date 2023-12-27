@@ -5,7 +5,8 @@ import './navbar.css';
 function Navbar() {
     return(
         <div>
-            Hello World
+            Hello World<br></br>
+            Site em desenvolvimento
         </div>
     );
 }
