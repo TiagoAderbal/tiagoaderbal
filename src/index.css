@@ -8,6 +8,7 @@
   margin: 0;
   box-sizing: border-box;
   outline-color: #cad74f;
+  background-color: coral;
 }
 
 body, button, input, a, ul, li, textarea {
