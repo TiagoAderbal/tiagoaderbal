@@ -5,7 +5,7 @@ import './navbar.css';
 function Navbar() {
     return(
         <div>
-            <img src='./react.png' alt='logo react'></img><br></br><br></br>
+            <img src='./assets/imgs/logo.png' alt='logo react'></img><br></br><br></br>
             Hello World<br></br>
             Site em desenvolvimento
         </div>

@@ -1,17 +1,4 @@
-@keyframes loading {
-    0% {
-		transform: rotate(0);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
 div {
     padding-top: 3rem;
     font-size: 2rem ;
-}
-
-img {
-    animation: loading 10s linear infinite;
 }
