@@ -6,7 +6,7 @@ function Navbar() {
     return(
         <div>
             <img src='./assets/imgs/logo.png' alt='logo react'></img><br></br><br></br>
-            Hello World
+            <p>Hello World</p>
         </div>
     );
 }

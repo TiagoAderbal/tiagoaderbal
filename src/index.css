@@ -4,13 +4,21 @@
   text-align: center;
   /* font-family: 'Montserrat', sans-serif; */
   /* font-family: 'Titillium Web', sans-serif; */
-  padding: 0;
-  margin: 0;
+  padding: 0 !important;
+  margin: 0 !important;
   box-sizing: border-box;
   outline-color: #cad74f;
+  background: #fff;
+  background: linear-gradient(15deg, #fff 77%, #979797 98%);
 }
 
-body, button, input, a, ul, li, textarea {
+body,
+button,
+input,
+a,
+ul,
+li,
+textarea {
   outline-color: #cad74f;
 }
 
