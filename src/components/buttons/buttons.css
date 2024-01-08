@@ -1,9 +1,14 @@
 .bi {
     font-size: 3rem;
-    margin: 1rem;
 }
 
 a {
     text-decoration: none;
     color: black;
+    box-shadow: 20px 20px 60px #979797,
+                -20px -20px 60px #ffffff;
+    border-radius: 70px;
+    background: #fff;
+    margin: 1rem;
+    padding: 1rem 0.9rem 0.5rem 0.9rem;
 }
