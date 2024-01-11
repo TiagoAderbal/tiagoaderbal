@@ -2,10 +2,13 @@
     font-size: 3rem;
 }
 
-a {
+.whats,
+.link,
+.gith,
+.insta {
     text-decoration: none;
     color: #4c4c4c;
-    box-shadow: 20px 20px 60px #4c4c4c,
+    box-shadow: 20px 20px 60px #262626,
                 -20px -20px 60px #ffffff;
     border-radius: 70px;
     background: #fff;
