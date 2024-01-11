@@ -1,8 +1,9 @@
 import Navbar from "../../components/navbar/navbar";
+import './index.css';
 
 function Projects() {
     return(
-        <div className="App">
+        <div className="App Projects">
             <Navbar></Navbar>
         </div>
     );
