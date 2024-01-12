@@ -10,6 +10,10 @@ function Home() {
             className="App Home"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            transition={{
+                delay: 1,
+                ease: "linear"
+            }}
         >
             <Navbar></Navbar>
             <Buttons></Buttons>

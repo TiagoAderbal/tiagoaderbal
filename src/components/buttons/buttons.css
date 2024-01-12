@@ -19,20 +19,20 @@
 
 .whats:hover {
     color: #25d366;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .link:hover {
     color: #0a66c2;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .gith:hover {
     color: #010409;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .insta:hover{
     color: #d62976;
-    transition: 0.5s;
+    transition: 0.3s;
 }
