@@ -1,5 +1,5 @@
 .bi {
-    font-size: 3rem;
+    font-size: 120%;
 }
 
 .whats,
@@ -12,8 +12,8 @@
                 -20px -20px 60px #ffffff;
     border-radius: 70px;
     background: #fff;
-    margin: 2%;
-    padding: 22px 15px 11px 15px;
+    margin: 3%;
+    padding: 15px 15px 11px 15px;
     transition: 0.5s;
 }
 
