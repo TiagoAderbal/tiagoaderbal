@@ -1,6 +1,6 @@
 import Buttons from "../../components/buttons/buttons";
-import Navbar from "../../components/navbar/navbar";
-// import ButProj from "../../components/ButProj/ButProj";
+import NavbarMain from "../../components/navbar_main/navbar_main";
+import ButProj from "../../components/ButProj/ButProj";
 import './index.css';
 import { motion } from "framer-motion";
 
@@ -11,13 +11,13 @@ function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
-                delay: 1,
+                delay: 0.8,
                 ease: "linear"
             }}
         >
-            <Navbar></Navbar>
+            <NavbarMain></NavbarMain>
             <Buttons></Buttons>
-            {/* <ButProj></ButProj> */}
+            <ButProj></ButProj>
         </motion.div>
     );
 }

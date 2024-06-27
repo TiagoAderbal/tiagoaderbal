@@ -1,0 +1,41 @@
+#logo {
+    margin-top: 4rem !important;
+    width: 8rem !important;
+}
+
+#text {
+    margin-top: 1rem;
+}
+
+#div_projects {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-gap: 20rem !important;
+    padding: 0 8% 5% 8%;
+}
+
+#link_text {
+    font-size: 80%;
+    text-decoration: none;
+    color: black;
+    box-shadow: 20px 20px 60px #262626,
+                -20px -20px 60px #ffffff;
+    border-radius: 70px;
+    background: #fff;
+    margin: 3%;
+    padding: 15px 5px 11px 5px;
+    transition: 0.5s;
+}
+
+@media (max-width: 800px) {
+    
+    #div_projects {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem !important;
+    }
+
+    #link_text {
+        margin-top: 1.5rem;
+    }
+}

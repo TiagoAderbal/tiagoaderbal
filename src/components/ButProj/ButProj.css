@@ -1,0 +1,18 @@
+.button_projects {
+    font-size: 80%;
+    text-decoration: none;
+    color: #4c4c4c;
+    box-shadow: 20px 20px 60px #262626,
+                -20px -20px 60px #ffffff;
+    border-radius: 70px;
+    background: #fff;
+    margin-bottom: 5rem !important;
+    padding: 15px 50px 15px 50px;
+    transition: 0.5s;
+}
+
+.button_projects:hover {
+    color: black;
+    transition: 0.2s;
+    font-size: 90%;
+}

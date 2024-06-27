@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import './navbar.css';
+import './navbar_main.css';
 import { motion } from 'framer-motion';
 
-function Navbar() {
+function NavbarMain() {
     return (
         <div>
             <motion.img
@@ -16,4 +16,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default NavbarMain;

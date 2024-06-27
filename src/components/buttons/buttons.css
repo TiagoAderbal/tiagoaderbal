@@ -36,3 +36,7 @@
     color: #d62976;
     transition: 0.3s;
 }
+
+.buttons {
+    margin-bottom: 5rem;
+}
