@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .App {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,6 +11,7 @@
   box-sizing: border-box;
   outline-color: #cad74f;
   background: #fff;
+  font-family: 'Montserrat';
 }
 
 body,
