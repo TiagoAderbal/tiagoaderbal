@@ -39,6 +39,7 @@
     width: 3.6rem;
     padding-left: 0.2rem;
     padding-bottom: 2.5rem;
+    transform: rotateY(-180deg);
 }
 
 #link-to-home {
@@ -71,5 +72,12 @@
 
     #link_text {
         margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 1300px) {
+    
+    #link_text {
+        font-size: 60%;
     }
 }
