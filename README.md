@@ -24,4 +24,4 @@
 
 ## 🌍 Onde me encontrar
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/tiagoaderbal/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin)]([https://www.linkedin.com/in/tiagoaderbal/](https://www.linkedin.com/in/tiago-aderbal-francisco-b0a67217b))
