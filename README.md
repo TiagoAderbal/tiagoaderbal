@@ -1,4 +1,5 @@
-# Hi! I'm [Tiago Aderbal](https://github.com/TiagoAderbal) ![image](https://github.com/user-attachments/assets/4182e842-d9d7-4ab4-9d70-af1b6a5269c4)
+# Hi! I'm [Tiago Aderbal](https://github.com/TiagoAderbal) ☕
+
 
 
 - 🚀 Passionate about turning ideas into digital reality.
