@@ -1,10 +1,9 @@
-# Hi! I'm [Tiago Aderbal](https://github.com/TiagoAderbal) ☕
-
+# Hi! I'm [Tiago Aderbal](https://github.com/TiagoAderbal) 🧑🏻‍💻
 
 
 - 🚀 Passionate about turning ideas into digital reality.
-- 🌱 Fascinated by new technologies and how they impact society.
-- 💬 Frontend developer focused on user experience, clean code, and solving root cause problems.
+- 🌐 Fascinated by new technologies and how they impact society.
+- 💻 Frontend developer focused on user experience, clean code and solving root cause problems.
 - 📫 How to reach me: tiago_aderbal2011@hotmail.com
 
 ---
@@ -15,12 +14,12 @@
 ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Vue.js](https://img.shields.io/badge/-Vue.js-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3)
 ![Postman](https://img.shields.io/badge/-Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3)
 ![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white)
 
 ---
