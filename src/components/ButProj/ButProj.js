@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function ButProj() {
     return(
         <div>
-            <Link className='button_projects' to='/projects'>CLICK HERE</Link>
+            <Link className='button_projects' to='/projects'>MY PROJECTS</Link>
         </div>
     );
 }

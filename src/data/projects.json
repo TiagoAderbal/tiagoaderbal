@@ -1,0 +1,58 @@
+[
+    {
+        "url": "https://balancopadrao.com.br",
+        "github": "",
+        "images": [
+            "/assets/imgs/bp1.png"
+        ],
+        "description": "Plataforma de análise de dados desenvolvida para uma empresa, onde os usuários fazem o input dos seus dados em um plano de contas padrão, e a ferramenta gera indicadores e relatórios financeiros com base nesses dados. Utilizando VueJS."
+    },
+    {
+        "url": "",
+        "github": "https://github.com/TiagoAderbal/login_manut_bi",
+        "images": [
+            "/assets/imgs/login_bi.png"
+        ],
+        "description": "Simples tela de login desenvolvida para um projeto de trabalho voluntário. Utilizado HTML, CSS e JS Vanilla."
+    },
+    {
+        "url": "https://numbers-kappa.vercel.app/",
+        "github": "https://github.com/TiagoAderbal/numbers",
+        "images": [
+            "/assets/imgs/numb1.png"
+        ],
+        "description": "Site institucional criado para um cliente que presta serviços de análise de dados. Utilizado ReactJS"
+    },
+    {
+        "url": "",
+        "github": "https://github.com/TiagoAderbal/telas_cardanexi",
+        "images": [
+            "/assets/imgs/carda1.png"
+        ],
+        "description": "Site criado para fixação de conteúdo. Desenvolvido com HTML, CSS e JS, bem como utilizado o Figma para design."
+    },
+    {
+        "url": "https://tiagoaderbal.github.io/projeto-integrador/index.html",
+        "github": "https://github.com/TiagoAderbal/projeto-integrador",
+        "images": [
+            "/assets/imgs/pi1.png"
+        ],
+        "description": "Projeto integrador da faculdade. Desenvolvido com HTML, CSS, JS, no front e PHP no back. Utilizado SQLite para o banco de dados."
+    },
+    {
+        "url": "https://aula-python-asimov.streamlit.app/",
+        "github": "https://github.com/TiagoAderbal/aula-python-asimov",
+        "images": [
+            "/assets/imgs/data_analysis1.png"
+        ],
+        "description": "Projeto de análise de dados, onde ele lê um dicionário contendo informações sobre diversos livros e compila essas informações. Utilizando Python com as bibliotecas streamlit, pandas e plotly."
+    },
+    {
+        "url": "https://indic-python-contabil.streamlit.app/",
+        "github": "https://github.com/TiagoAderbal/indic-python",
+        "images": [
+            "/assets/imgs/indic1.png"
+        ],
+        "description": "Projeto de análise de dados, onde ele lê um arquivo em excel contendo informações sobre uma instituição, lê essas informação e gera os indicadores. Utilizando Python com as bibliotecas streamlit, pandas e plotly."
+    }
+]

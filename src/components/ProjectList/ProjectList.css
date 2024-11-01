@@ -1,0 +1,9 @@
+.card {
+    font-size: 80%;
+    box-shadow: 20px 20px 60px #262626;
+    border-radius: 20px;
+}
+
+.card:hover {
+    transition: 0.2s;
+}
