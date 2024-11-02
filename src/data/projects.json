@@ -13,7 +13,7 @@
         "images": [
             "/assets/imgs/login_bi.png"
         ],
-        "description": "Simples tela de login desenvolvida para um projeto de trabalho voluntário. Utilizado HTML, CSS e JS Vanilla."
+        "description": "Simples tela de login desenvolvida para um projeto de trabalho voluntário. Utilizado HTML, CSS e JS."
     },
     {
         "url": "https://numbers-kappa.vercel.app/",
@@ -21,7 +21,7 @@
         "images": [
             "/assets/imgs/numb1.png"
         ],
-        "description": "Site institucional criado para um cliente que presta serviços de análise de dados. Utilizado ReactJS"
+        "description": "Site institucional. Criado para um cliente que presta serviços de análise de dados. Utilizado ReactJS"
     },
     {
         "url": "",
@@ -45,7 +45,7 @@
         "images": [
             "/assets/imgs/data_analysis1.png"
         ],
-        "description": "Projeto de análise de dados, onde ele lê um dicionário contendo informações sobre diversos livros e compila essas informações. Utilizando Python com as bibliotecas streamlit, pandas e plotly."
+        "description": "Projeto de análise de dados. Faz a leitura de um dicionário contendo informações sobre diversos livros e compila essas dados em indicadores. Utilizando Python com as bibliotecas streamlit, pandas e plotly."
     },
     {
         "url": "https://indic-python-contabil.streamlit.app/",
@@ -53,6 +53,6 @@
         "images": [
             "/assets/imgs/indic1.png"
         ],
-        "description": "Projeto de análise de dados, onde ele lê um arquivo em excel contendo informações sobre uma instituição, lê essas informação e gera os indicadores. Utilizando Python com as bibliotecas streamlit, pandas e plotly."
+        "description": "Projeto de análise de dados. Faz a leitura de um arquivo em excel contendo informações sobre uma instituição, lê essas informação e gera os indicadores. Utilizando Python com as bibliotecas streamlit, pandas e plotly."
     }
 ]
