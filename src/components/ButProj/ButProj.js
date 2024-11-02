@@ -7,7 +7,7 @@ function ButProj() {
   return (
     <div className="d-flex justify-content-center align-items-center" style={{ marginBottom: "5rem" }}>
       <Link className="button_projects me-2" to="/projects">
-        MY PROJECTS
+        MEUS PROJETOS
       </Link>
       <img
         id="arrow"
@@ -16,7 +16,7 @@ function ButProj() {
         className="me-2 mt-4"
       />
       <p id="text-nav" style={{ transform: "rotate(15deg)" }} className="mt-2">
-        Click here
+        Clique aqui
       </p>
     </div>
   );

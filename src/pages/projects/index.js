@@ -7,14 +7,17 @@ import { motion } from "framer-motion";
 function Projects() {
   const [showImage, setShowImage] = useState(false);
 
-  const handleScroll = () => {
-    const scrollPosition =
-      window.innerHeight + window.scrollY >= document.body.offsetHeight;
-    setShowImage(scrollPosition);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setShowImage(true);
+      } else {
+        setShowImage(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };

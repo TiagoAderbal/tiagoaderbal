@@ -1,4 +1,31 @@
 #lang {
     height: 5rem;
-    width: auto;
+    width: 5rem;
+}
+
+#lang:hover {
+    cursor: pointer;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow {
+    margin-top: 2rem;
+}
+
+.text-overlay {
+    transform: rotate(15deg);
+    margin-top: 1rem;
 }

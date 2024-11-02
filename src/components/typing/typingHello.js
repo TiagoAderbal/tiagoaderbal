@@ -10,7 +10,7 @@ function TypingHello() {
         id="typer"
         startDelay={400}
         cursorColor="black"
-        text="Hi, I'm Tiago Aderbal, and I'm a frontend developer!"
+        text="Olá, sou Tiago Aderbal && dev frontend!"
         typeSpeed={50}
       />
     </div>

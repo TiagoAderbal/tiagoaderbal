@@ -22,13 +22,13 @@ function Home() {
         <p className="pb-3 text-center fs-3">
           Turning ideas into digital reality. 💡
         </p>
-        <div className="card p-4" style={{ marginBottom: "4rem" }}>
+        <div className="card p-4 pb-3" style={{ marginBottom: "4rem" }}>
           <p className="text-center fs-5">
-            I work in web development, creating websites, landing pages, and
-            applications using Vue, React, React Native, HTML5, CSS3,
-            JavaScript, TypeScript, and Bootstrap. Occasionally, I venture into
-            backend development with PHP, Python, and MySQL. I have experience
-            in JSON manipulation, consuming REST APIs, and using HTTP protocols.
+            Trabalho com desenvolvimento de softwares criando sites, landing
+            pages e aplicativos usando Vue, React, React Native, HTML5, CSS3,
+            JavaScript, TypeScript e Bootstrap. De vez em quando me aventuro no
+            back usando PHP, NodeJS, Python e MySQL. Tenho experiência com manipulação de
+            JSON, consumo de APIs REST e uso de protocolos HTTP.
           </p>
         </div>
       </div>

@@ -1,5 +1,5 @@
 div {
-    font-size: 2rem ;
+    font-size: 2rem;
 }
 
 img {
@@ -10,4 +10,25 @@ img {
 #profile {
     border-radius: 50%;
     border: 3px solid #000;
+}
+
+#humor {
+    position: fixed;
+    top: 5px;
+    left: 50px;
+    height: 8rem;
+    width: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+
+    #humor {
+        position: fixed;
+        top: 5px;
+        left: 50px;
+        height: 5rem !important;
+        width: auto;
+        border-radius: 10px;
+    }
 }
