@@ -3,6 +3,7 @@ import NavbarMain from "../../components/navbar_main/navbar_main";
 import ButProj from "../../components/ButProj/ButProj";
 import "./index.css";
 import { motion } from "framer-motion";
+import Stacks from "../../components/Stacks/Stacks";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       }}
     >
       <NavbarMain></NavbarMain>
+      <Buttons></Buttons>
       <div className="container">
         <p className="pb-3 text-center fs-3">
           Turning ideas into digital reality. 💡
@@ -30,8 +32,8 @@ function Home() {
           </p>
         </div>
       </div>
-      <Buttons></Buttons>
       <ButProj></ButProj>
+      <Stacks></Stacks>
     </motion.div>
   );
 }

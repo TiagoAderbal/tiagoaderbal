@@ -10,7 +10,8 @@ function NavbarMain() {
             <motion.img
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                src='./assets/imgs/logo.png' alt='logo react'>
+                src='./assets/imgs/profile.jpg' alt='logo react'
+                id='profile'>
             </motion.img><br></br><br></br>
             <TypingHello></TypingHello>
         </div>

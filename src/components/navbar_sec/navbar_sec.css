@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
-#logo {
-    margin-top: 4rem !important;
-    margin-left: 15%;
-    width: 8rem !important;
-}
-
 #text {
     margin-top: 1rem;
 }
@@ -17,17 +11,6 @@
     padding: 0 8% 5% 8%;
 }
 
-#arrow {
-    width: 3.6rem;
-    margin-left: 1rem;
-    padding-bottom: 2.5rem;
-    transform: rotateY(-180deg);
-}
-
-#link-to-home {
-    cursor: default;
-}
-
 #div-sec {
     display: flex;
     flex-direction: row;
@@ -35,17 +18,21 @@
     justify-content: center;
 }
 
+#link-to-home {
+    text-decoration: none !important;
+    margin-top: 4rem;
+}
+
 #text-nav {
     font-family: 'Caveat';
     font-size: 1.5rem;
     line-height: 1.9rem;
-    margin-top: 7.5rem;
     margin-left: 0.1rem;
-    transform: rotate(18deg);
+    color: #000;
 }
 
 @media (max-width: 800px) {
-    
+
     #div_projects {
         display: grid;
         grid-template-columns: 1fr;
@@ -58,7 +45,7 @@
 }
 
 @media (max-width: 1300px) {
-    
+
     #link_text {
         font-size: 60%;
     }

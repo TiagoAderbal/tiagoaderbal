@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import projectsData from "../../data/projects.json";
 import "./ProjectList.css";
 
+import { motion } from "framer-motion";
+
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -23,7 +25,7 @@ const ProjectList = () => {
   }, []);
 
   return (
-    <div className="container pt-5 pb-3">
+    <div className="container pt-5">
       <div className="row d-flex justify-content-around">
         {projects.map((project, index) => {
           const imageToShow =
@@ -40,10 +42,13 @@ const ProjectList = () => {
                       target={project.url ? "_blank" : undefined}
                       rel="noopener noreferrer"
                     >
-                      <img
+                      <motion.img
                         src={imageToShow}
                         className="card-img-top mt-0 pt-0 pb-4"
                         alt={`${project.name} screenshot`}
+                        whileHover={{ scale: 1.07 }}
+                        transition={{ duration: 0.2 }}
+                        style={{ zIndex: 1000 }}
                       />
                     </a>
                   )}

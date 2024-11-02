@@ -1,3 +1,24 @@
 .Projects {
     background: linear-gradient(-15deg, #fff 92%, #6f6f6f 99%);
 }
+
+#fixed-bottom {
+    position: fixed;
+    width: 10rem;
+    bottom: 1rem;
+    right: -50px;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+@media (max-width: 720px) {
+
+    #fixed-bottom {
+        position: fixed;
+        width: 7rem;
+        bottom: 1rem;
+        right: -50px;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+}
