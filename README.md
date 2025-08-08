@@ -2,7 +2,7 @@
 
 - 🚀 Passionate about turning ideas into digital reality.
 - 🌐 Fascinated by new technologies and how they impact society.
-- 💻 Frontend developer focused on user experience, clean code and solving root cause problems.
+- 💻 Fullstack developer focused on user experience, clean code and solving root cause problems.
 - 📫 How to reach me: tiago_aderbal2011@hotmail.com
 
 ---
