@@ -24,11 +24,11 @@ function Home() {
         </p>
         <div className="card p-4 pb-3" style={{ marginBottom: "4rem" }}>
           <p className="text-center fs-5">
-            Trabalho com desenvolvimento de softwares criando sites, landing
-            pages e aplicativos usando Vue, React, React Native, HTML5, CSS3,
-            JavaScript, TypeScript e Bootstrap. De vez em quando me aventuro no
-            back usando PHP, NodeJS, Python e MySQL. Tenho experiência com manipulação de
-            JSON, consumo de APIs REST e uso de protocolos HTTP.
+            Sou desenvolvedor fullstack com foco no ecossistema JavaScript/TypeScript.
+            No front-end, trabalho com React, Next e Vue, além de dominar ferramentas de CSS (Bootstrap e Tailwind).
+            No back-end tenho experiência com Node, Express, Nest, além de conhecimentos em Python e PHP. Tenho experiência com bancos relacionais (MySQL, PostgreSQL)
+            e não relacionais (MongoDB), além de dominar Docker e Git. Meu objetivo é criar soluções completas,
+            aplicando boas práticas e pensamento crítico para resolver problemas na raiz.
           </p>
         </div>
       </div>

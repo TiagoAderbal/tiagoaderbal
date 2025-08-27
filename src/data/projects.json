@@ -1,5 +1,13 @@
 [
     {
+        "url": "https://residencialdclarice.com.br/",
+        "github": "",
+        "images": [
+            "/assets/imgs/residencial.png"
+        ],
+        "description": "Sistema de gestão para clínica geriátrica, com módulos financeiro e operacional (sinais vitais em tempo real, estoque e prescrição de medicações, etc). Desenvolvido com Python/Django no backend e React + Next.js + TypeScript no frontend."
+    },
+    {
         "url": "https://balancopadrao.com.br",
         "github": "",
         "images": [
