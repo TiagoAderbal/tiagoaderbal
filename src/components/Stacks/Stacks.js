@@ -58,52 +58,20 @@ const Stacks = () => {
         </div>
         <div className="col-3">
           <motion.img
-            src={
-              showImgStar
-                ? "./assets/imgs/stacks/star.png"
-                : "./assets/imgs/stacks/github.png"
-            }
+            src="./assets/imgs/stacks/ts.png"
             alt="Lang 4"
             className="img-fluid"
             id="lang"
             whileHover={{ scale: 1.2, rotate: -3 }}
             transition={{ duration: 0.2 }}
-            onHoverStart={() => setShowImgStar(true)}
-            onHoverEnd={() => setShowImgStar(false)}
           />
         </div>
 
         {/* Segunda linha */}
         <div className="col-3">
           <motion.img
-            src="./assets/imgs/stacks/ts.png"
-            alt="Lang 5"
-            className="img-fluid"
-            id="lang"
-            whileHover={{ scale: 1.2, rotate: -3 }}
-            transition={{ duration: 0.2 }}
-          />
-        </div>
-        <div className="col-3">
-          <motion.img
-            src={
-              showImgIron
-                ? "./assets/imgs/stacks/ironman.png"
-                : "./assets/imgs/stacks/git.png"
-            }
-            alt="Lang 7"
-            className="img-fluid"
-            id="lang"
-            whileHover={{ scale: 1.2, rotate: -3 }}
-            transition={{ duration: 0.2 }}
-            onHoverStart={() => setShowImgIron(true)}
-            onHoverEnd={() => setShowImgIron(false)}
-          />
-        </div>
-        <div className="col-3">
-          <motion.img
             src="./assets/imgs/stacks/vue.png"
-            alt="Lang 6"
+            alt="Lang 5"
             className="img-fluid"
             id="lang"
             whileHover={{ scale: 1.2, rotate: -3 }}
@@ -117,7 +85,7 @@ const Stacks = () => {
                 ? "./assets/imgs/stacks/assassins.png"
                 : "./assets/imgs/stacks/react.png"
             }
-            alt="Lang 8"
+            alt="Lang 6"
             className="img-fluid"
             id="lang"
             whileHover={{ scale: 1.2, rotate: -3 }}
@@ -126,31 +94,9 @@ const Stacks = () => {
             onHoverEnd={() => setShowImgAssass(false)}
           />
         </div>
-
-        {/* Terceira linha */}
         <div className="col-3">
           <motion.img
-            src="./assets/imgs/stacks/bootstrap.png"
-            alt="Lang 9"
-            className="img-fluid"
-            id="lang"
-            whileHover={{ scale: 1.2, rotate: -3 }}
-            transition={{ duration: 0.2 }}
-          />
-        </div>
-        <div className="col-3">
-          <motion.img
-            src="./assets/imgs/stacks/postman.png"
-            alt="Lang 10"
-            className="img-fluid"
-            id="lang"
-            whileHover={{ scale: 1.2, rotate: -3 }}
-            transition={{ duration: 0.2 }}
-          />
-        </div>
-        <div className="col-3">
-          <motion.img
-            src="./assets/imgs/stacks/php1.png"
+            src="./assets/imgs/stacks/node.png"
             alt="Lang 11"
             className="img-fluid"
             id="lang"
@@ -175,10 +121,75 @@ const Stacks = () => {
           />
         </div>
 
+        {/* Terceira linha */}
+        <div className="col-3">
+          <motion.img
+            src="./assets/imgs/stacks/bootstrap.png"
+            alt="Lang 9"
+            className="img-fluid"
+            id="lang"
+            whileHover={{ scale: 1.2, rotate: -3 }}
+            transition={{ duration: 0.2 }}
+          />
+        </div>
+        <div className="col-3">
+          <motion.img
+            src="./assets/imgs/stacks/php1.png"
+            alt="Lang 9"
+            className="img-fluid"
+            id="lang"
+            whileHover={{ scale: 1.2, rotate: -3 }}
+            transition={{ duration: 0.2 }}
+          />
+        </div>
+        <div className="col-3">
+          <motion.img
+            src={
+              showImgStar
+                ? "./assets/imgs/stacks/star.png"
+                : "./assets/imgs/stacks/github.png"
+            }
+            alt="Lang 7"
+            className="img-fluid"
+            id="lang"
+            whileHover={{ scale: 1.2, rotate: -3 }}
+            transition={{ duration: 0.2 }}
+            onHoverStart={() => setShowImgStar(true)}
+            onHoverEnd={() => setShowImgStar(false)}
+          />
+        </div>
+        <div className="col-3">
+          <motion.img
+            src={
+              showImgIron
+                ? "./assets/imgs/stacks/ironman.png"
+                : "./assets/imgs/stacks/git.png"
+            }
+            alt="Lang 8"
+            className="img-fluid"
+            id="lang"
+            whileHover={{ scale: 1.2, rotate: -3 }}
+            transition={{ duration: 0.2 }}
+            onHoverStart={() => setShowImgIron(true)}
+            onHoverEnd={() => setShowImgIron(false)}
+          />
+        </div>
+
         {/* Quarta linha */}
 
-        {/* Quinta linha com dois elementos */}
-        <div className="col-4">
+        {/* Quinta linha com tres elementos */}
+        
+        <div className="col-3">
+          <motion.img
+            src="./assets/imgs/stacks/postman.png"
+            alt="Lang 10"
+            className="img-fluid"
+            id="lang"
+            whileHover={{ scale: 1.2, rotate: -3 }}
+            transition={{ duration: 0.2 }}
+          />
+        </div>
+        <div className="col-3">
           <motion.img
             src={
               showImgBlack
@@ -194,7 +205,7 @@ const Stacks = () => {
             onHoverEnd={() => setShowImgBlack(false)}
           />
         </div>
-        <div className="col-4 d-flex justify-content-center">
+        <div className="col-3 d-flex justify-content-center">
           <motion.img
             src="./assets/imgs/stacks/coffee.png"
             alt="Lang 13"

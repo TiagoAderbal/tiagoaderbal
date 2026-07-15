@@ -4,6 +4,7 @@ import ButProj from "../../components/ButProj/ButProj";
 import "./index.css";
 import { motion } from "framer-motion";
 import Stacks from "../../components/Stacks/Stacks";
+import AskTiago from "../../components/AskTiago";
 
 function Home() {
   return (
@@ -18,20 +19,22 @@ function Home() {
     >
       <NavbarMain></NavbarMain>
       <Buttons></Buttons>
-      <div className="container">
+      <AskTiago></AskTiago>
+      {/* <div className="container">
         <p className="pb-3 text-center fs-3">
           Turning ideas into digital reality. 💡
         </p>
         <div className="card p-4 pb-3" style={{ marginBottom: "4rem" }}>
           <p className="text-center fs-5">
-            Sou desenvolvedor fullstack com foco no ecossistema JavaScript/TypeScript.
-            No front-end, trabalho com React, Next e Vue, além de dominar ferramentas de CSS (Bootstrap e Tailwind).
-            No back-end tenho experiência com Node, Express, Nest, além de conhecimentos em Python e PHP. Tenho experiência com bancos relacionais (MySQL, PostgreSQL)
-            e não relacionais (MongoDB), além de dominar Docker e Git. Meu objetivo é criar soluções completas,
-            aplicando boas práticas e pensamento crítico para resolver problemas na raiz.
+            Desenvolvedor Fullstack focado na construção de experiências digitais escaláveis e na resolução de desafios complexos em ambientes de produção de alto tráfego.<br></br><br></br>
+
+            Atualmente atuo no Estadão como parte de uma equipe responsável pelo desenvolvimento de novos produtos e interfaces, resolução de incidentes críticos e suporte a áreas estratégicas. Minha experiência abrange desenvolvimento frontend e backend utilizando React, Vue.js, Node.js, NestJS, JavaScript e TypeScript, além de integrações com APIs REST, Salesforce Personalization e Salesforce Marketing Cloud. Também trabalho com experiências de personalização, fluxos transacionais, campanhas promocionais, modais web e interfaces escaláveis com foco em performance, manutenibilidade e experiência do usuário.<br></br><br></br>
+
+            Além da engenharia de software, estou constantemente expandindo meus conhecimentos em cibersegurança, com ênfase em engenharia social, fundamentos de resposta a incidentes, análise de redes e conscientização em segurança da informação.
+
           </p>
         </div>
-      </div>
+      </div> */}
       <ButProj></ButProj>
       <Stacks></Stacks>
     </motion.div>
