@@ -52,6 +52,7 @@ export default function ArcTerminal(props) {
             <TerminalOutput
               terminalState={props.terminalState}
               answer={props.answer}
+              errorType={props.errorType}
               setTerminalState={props.setTerminalState}
               infected={infected}
             />

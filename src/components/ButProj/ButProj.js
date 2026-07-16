@@ -24,7 +24,7 @@ function ButProj() {
           style={{ transform: "rotate(15deg)" }}
           className="mt-2"
         >
-          Clique aqui
+          Clica não
         </p>
       </div>
     </div>

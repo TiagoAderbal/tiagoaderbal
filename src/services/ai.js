@@ -1,15 +1,21 @@
 export async function askToTiago(question) {
-  const res = await fetch("/api/ask", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ question }),
-  });
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 15000);
 
-  if (!res.ok) {
-    const errorData = await res.json().catch(() => null);
-    return errorData?.answer ?? "Desculpa, algo deu errado. Tenta novamente 🙏";
+  try {
+    const res = await fetch("/api/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question }),
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeoutId);
+
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    clearTimeout(timeoutId);
+    return { type: error.name === "AbortError" ? "TIMEOUT" : "SERVER_ERROR" };
   }
-
-  const data = await res.json();
-  return data.answer;
 }

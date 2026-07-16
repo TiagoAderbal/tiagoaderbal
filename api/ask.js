@@ -71,45 +71,37 @@ async function tryModel(model, question) {
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({
-      error: "Method not allowed",
-    });
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   const { question } = req.body ?? {};
 
   if (typeof question !== "string") {
-    return res.status(400).json({
-      error: "Pergunta inválida",
-    });
+    return res.status(400).json({ type: "INVALID_INPUT" });
   }
 
   const trimmed = question.trim();
 
-  if (!trimmed.length) {
-    return res.status(400).json({
-      error: "Pergunta vazia",
-    });
+  if (trimmed.length === 0) {
+    return res.status(400).json({ type: "INVALID_INPUT" });
   }
 
-  if (trimmed.length > 100) {
-    return res.status(400).json({
-      error: "Pergunta excede o limite de 100 caracteres",
-    });
+  if (trimmed.length > 50) {
+    return res.status(400).json({ type: "INVALID_INPUT" });
   }
 
   if (isSuspicious(trimmed)) {
     return res.status(200).json({
-      answer:
-        "Eu sou o ATLAS e estou aqui para falar sobre o Tiago. Bora continuar por esse caminho? 🙂",
+      type: "OK",
+      answer: "Eu sou o ATLAS e estou aqui pra falar sobre o Tiago — carreira, projetos e tecnologias. Bora seguir por aí? 🙂",
     });
   }
 
   let lastError = null;
+  let allRateLimited = true;
 
   for (const model of MODEL_FALLBACK_CHAIN) {
     if (isModelOnCooldown(model)) {
-      console.warn(`[ATLAS] ${model} em cooldown`);
       continue;
     }
 
@@ -120,32 +112,30 @@ export default async function handler(req, res) {
         answer = answer.replace(leakPatterns, "ATLAS");
       }
 
-      return res.status(200).json({
-        answer,
-        model,
-      });
-
+      return res.status(200).json({ type: "OK", answer, model });
     } catch (error) {
       lastError = error;
 
-      console.warn(`[ATLAS] ${model} falhou`);
-
       if (error?.status === 429) {
-        setModelCooldown(model);
+        setModelCooldown(model, error);
+      } else {
+        allRateLimited = false;
       }
 
       if (isRecoverableError(error)) {
         continue;
       }
 
+      allRateLimited = false;
       break;
     }
   }
 
-  console.error(lastError);
+  console.error("[ATLAS] Todos os modelos falharam.", lastError);
 
-  return res.status(500).json({
-    answer:
-      "⚠️ Conexão com o núcleo do ATLAS perdida.\n\nEnquanto restabeleço meus sistemas... aproveite para explorar o restante do site. 😉",
-  });
+  if (allRateLimited) {
+    return res.status(200).json({ type: "RATE_LIMIT" });
+  }
+
+  return res.status(200).json({ type: "SERVER_ERROR" });
 }
