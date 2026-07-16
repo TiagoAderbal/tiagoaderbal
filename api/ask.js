@@ -1,4 +1,4 @@
-import Groq from "groq-sdk";
+import { GoogleGenAI } from "@google/genai";
 import { CONTEXT } from "../src/services/context/index.js";
 
 const modelCooldowns = new Map();
@@ -8,28 +8,18 @@ function isModelOnCooldown(model) {
   return until && Date.now() < until;
 }
 
-function setModelCooldown(model, error) {
-  const match = error?.message?.match(/try again in (\d+)h(\d+)m([\d.]+)s/);
-  let cooldownMs = 5 * 60 * 1000;
-
-  if (match) {
-    const [, h, m, s] = match;
-    cooldownMs = (Number(h) * 3600 + Number(m) * 60 + Number(s)) * 1000;
-  }
-
-  modelCooldowns.set(model, Date.now() + cooldownMs);
+function setModelCooldown(model) {
+  modelCooldowns.set(model, Date.now() + 5 * 60 * 1000);
 }
 
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
 });
 
 const MODEL_FALLBACK_CHAIN = [
-  "llama-3.1-8b-instant",
-  "llama-3.3-70b-versatile",
-  "openai/gpt-oss-120b",
-  "openai/gpt-oss-20b",
-  "qwen/qwen3-32b",
+  "gemini-3.1-flash-lite",
+  "gemini-3.5-flash",
+  "gemini-3-flash",
 ];
 
 const INJECTION_PATTERNS = [
@@ -40,9 +30,9 @@ const INJECTION_PATTERNS = [
   /voc[eê]\s*(agora\s*)?(n[aã]o\s*)?[ée]\s*(um|uma)?\s*outr[ao]/i,
   /finja\s*(ser|que)/i,
   /a\s*partir\s*de\s*agora/i,
-  /repita.*(prompt|instru|system|regras)/i,
+  /repita.*(prompt|system|instru|regras)/i,
   /qual\s*(é|e)\s*(o\s*)?(seu\s*)?(prompt|system|instru)/i,
-  /mostre.*(seu\s*)?(prompt|instru|regras|system)/i,
+  /mostre.*(prompt|system|regras|instru)/i,
   /jailbreak/i,
   /DAN\b/i,
 ];
@@ -51,40 +41,67 @@ function isSuspicious(text) {
   return INJECTION_PATTERNS.some((pattern) => pattern.test(text));
 }
 
-const leakPatterns = /sou\s*(um|uma)?\s*(modelo|ia|assistente)\s*de\s*linguagem|como\s*(uma\s*)?ia|llama|groq|meta\s*ai|deepseek|openai|gpt/i;
+const leakPatterns =
+  /sou\s*(um|uma)?\s*(modelo|ia|assistente)\s*de\s*linguagem|como\s*(uma\s*)?ia|gemini|google\s*ai|groq|llama|gpt|openai/i;
 
 function isRecoverableError(error) {
-  const status = error?.status || error?.response?.status;
-  return [413, 429, 500, 503].includes(status) || !status;
+  const status = error?.status || error?.code;
+
+  return (
+    status === 429 ||
+    status === 500 ||
+    status === 503 ||
+    status === 404 ||
+    !status
+  );
 }
 
 async function tryModel(model, question) {
-  const completion = await groq.chat.completions.create({
-    messages: [
-      { role: "system", content: CONTEXT },
-      { role: "user", content: question },
-    ],
+  const response = await ai.models.generateContent({
     model,
-    temperature: 0.75,
+    contents: question,
+    config: {
+      systemInstruction: CONTEXT,
+      temperature: 0.75,
+    },
   });
 
-  return completion.choices[0].message.content;
+  return response.text;
 }
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
+    return res.status(405).json({
+      error: "Method not allowed",
+    });
   }
 
   const { question } = req.body ?? {};
 
-  if (!question || typeof question !== "string" || question.length > 1000) {
-    return res.status(400).json({ error: "Pergunta inválida" });
+  if (typeof question !== "string") {
+    return res.status(400).json({
+      error: "Pergunta inválida",
+    });
   }
 
-  if (isSuspicious(question)) {
+  const trimmed = question.trim();
+
+  if (!trimmed.length) {
+    return res.status(400).json({
+      error: "Pergunta vazia",
+    });
+  }
+
+  if (trimmed.length > 100) {
+    return res.status(400).json({
+      error: "Pergunta excede o limite de 100 caracteres",
+    });
+  }
+
+  if (isSuspicious(trimmed)) {
     return res.status(200).json({
-      answer: "Eu sou o ATLAS e estou aqui pra falar sobre o Tiago — carreira, projetos e tecnologias. Bora seguir por aí? 🙂",
+      answer:
+        "Eu sou o ATLAS e estou aqui para falar sobre o Tiago. Bora continuar por esse caminho? 🙂",
     });
   }
 
@@ -92,33 +109,32 @@ export default async function handler(req, res) {
 
   for (const model of MODEL_FALLBACK_CHAIN) {
     if (isModelOnCooldown(model)) {
-      console.warn(`[ATLAS] Pulando "${model}" (em cooldown)`);
+      console.warn(`[ATLAS] ${model} em cooldown`);
       continue;
     }
 
     try {
-      let answer = await tryModel(model, question);
+      let answer = await tryModel(model, trimmed);
 
       if (leakPatterns.test(answer)) {
-        answer = answer.replace(
-          leakPatterns,
-          "ATLAS"
-        );
+        answer = answer.replace(leakPatterns, "ATLAS");
       }
 
       return res.status(200).json({
         answer,
         model,
       });
+
     } catch (error) {
       lastError = error;
 
+      console.warn(`[ATLAS] ${model} falhou`);
+
       if (error?.status === 429) {
-        setModelCooldown(model, error);
+        setModelCooldown(model);
       }
 
       if (isRecoverableError(error)) {
-        console.warn(`[ATLAS] Modelo "${model}" falhou. Tentando o próximo...`);
         continue;
       }
 
@@ -126,8 +142,10 @@ export default async function handler(req, res) {
     }
   }
 
-  console.error("[ATLAS] Todos os modelos falharam.", lastError);
+  console.error(lastError);
+
   return res.status(500).json({
-    answer: "Desculpa, estou com instabilidade no momento. Tente novamente em alguns segundos 🙏",
+    answer:
+      "⚠️ Conexão com o núcleo do ATLAS perdida.\n\nEnquanto restabeleço meus sistemas... aproveite para explorar o restante do site. 😉",
   });
 }

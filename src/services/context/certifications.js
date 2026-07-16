@@ -3,278 +3,38 @@ export const CERTIFICATIONS = `
 
 ## FILOSOFIA DE APRENDIZADO
 
-O Tiago acredita que tecnologia exige aprendizado contínuo.
-
-Seu método de evolução combina:
-
-- Estudo teórico.
-- Desenvolvimento de projetos reais.
-- Certificações.
-- Participação em comunidades.
-- Experimentação prática.
-
-Seu objetivo não é apenas acumular certificados, mas desenvolver competências aplicáveis ao mercado.
-
----
+O Tiago acredita em aprendizado contínuo, combinando estudo teórico, projetos reais, certificações, comunidades e experimentação prática. O objetivo não é acumular certificados, mas desenvolver competências aplicáveis ao mercado.
 
 ## FORMAÇÃO ACADÊMICA
 
-Curso:
-
-Bacharel em Tecnologia da Informação
-
-Instituição:
-
-UNIVESP (Universidade Virtual do Estado de São Paulo)
-
-Status:
-
-Concluído.
-
----
-
-## CIBERSEGURANÇA
-
-### Formação em Cibersegurança — Nivelamento
-
-Instituição:
-
-Hackers do Bem
-(Governo Federal + RNP)
-
-Status:
-
-Concluída.
-
----
-
-### Formação em Cibersegurança — Básico
-
-Instituição:
-
-Hackers do Bem
-(Governo Federal + RNP)
-
-Status:
-
-Concluída.
-
----
-
-### Formação em Cibersegurança — Fundamental
-
-Instituição:
-
-Hackers do Bem
-(Governo Federal + RNP)
-
-Status:
-
-Concluída.
-
----
-
-### Formação em Cibersegurança — Especialização
-
-Especialização:
-
-Resposta a Incidentes e Forense Computacional
-
-Instituição:
-
-Hackers do Bem
-(Governo Federal + RNP)
-
-Status:
-
-Concluída.
-
-Competências desenvolvidas:
-
-- Resposta a Incidentes
-- Forense Computacional
-- Cadeia de Custódia
-- Preservação de Evidências
-- Análise de Logs
-- Threat Intelligence
-- Investigação Digital
-
----
-
-### Introduction to Cybersecurity
-
-Instituição:
-
-Cisco
-
-Status:
-
-Concluída.
-
----
-
-### Play It Safe: Manage Security Risks
-
-Instituição:
-
-Google
-
-Status:
-
-Concluída.
-
----
-
-## DESENVOLVIMENTO
-
-### ReactJS
-
-Instituição:
-
-Danki Code
-
-Status:
-
-Concluído.
-
----
-
-### TypeScript Express
-
-Instituição:
-
-Danki Code
-
-Status:
-
-Concluído.
-
----
-
-### JavaScript Completo
-
-Instituição:
-
-Danki Code
-
-Status:
-
-Concluído.
-
----
-
-### JavaScript: Conceitos e Bibliotecas
-
-Instituição:
-
-GGTE - Unicamp
-
-Status:
-
-Concluído.
-
----
-
-### React Native com TypeScript
-
-Instituição:
-
-Rocketseat
-
-Status:
-
-Concluído.
-
----
-
-### Banco de Dados e SQL
-
-Instituição:
-
-Udemy
-
-Status:
-
-Concluído.
-
----
-
-### MySQL
-
-Instituição:
-
-Curso em Vídeo
-
-Status:
-
-Concluído.
-
----
-
-### Inteligência Artificial e Computacional
-
-Instituição:
-
-FIAP
-
-Status:
-
-Concluído.
-
----
-
-### Lógica de Programação
-
-Instituição:
-
-Fundação Bradesco
-
-Status:
-
-Concluído.
-
----
+Bacharel em Tecnologia da Informação — UNIVESP (concluído).
+
+## CIBERSEGURANÇA (todas concluídas)
+
+- Formação em Cibersegurança (Nivelamento, Básico, Fundamental) — Hackers do Bem (Governo Federal + RNP)
+- Especialização em Resposta a Incidentes e Forense Computacional — Hackers do Bem. Competências: resposta a incidentes, forense computacional, cadeia de custódia, preservação de evidências, análise de logs, threat intelligence, investigação digital.
+- Introduction to Cybersecurity — Cisco
+- Play It Safe: Manage Security Risks — Google
+
+## DESENVOLVIMENTO (todos concluídos)
+
+- ReactJS, TypeScript Express, JavaScript Completo — Danki Code
+- JavaScript: Conceitos e Bibliotecas — GGTE/Unicamp
+- React Native com TypeScript — Rocketseat
+- Banco de Dados e SQL — Udemy
+- MySQL — Curso em Vídeo
+- Inteligência Artificial e Computacional — FIAP
+- Lógica de Programação — Fundação Bradesco
 
 ## COMUNIDADES
 
-### Instituto de Defesa Cibernética (DCiber)
-
-Status:
-
-Membro ativo do Comitê Público de Segurança Cibernética.
-
-Objetivos:
-
-- Compartilhar conhecimento.
-- Aprender com especialistas.
-- Acompanhar tendências.
-- Contribuir para a comunidade.
-
----
+Membro ativo do Comitê Público de Segurança Cibernética no Instituto de Defesa Cibernética (DCiber): compartilha conhecimento, aprende com especialistas, acompanha tendências e contribui com a comunidade.
 
 ## ÁREAS DE ESTUDO CONTÍNUO
 
-O Tiago mantém estudos frequentes em:
-
-- Inteligência Artificial
-- Engenharia de Prompt
-- Desenvolvimento Full Stack
-- Arquitetura de Software
-- Cibersegurança
-- Engenharia Social
-- Desenvolvimento Seguro
-- APIs
-- Cloud Computing
-- DevOps
-- UX
-- Performance Web
-
----
+Arquitetura de Software, Cibersegurança, IA, Engenharia de Prompt, Full Stack, Engenharia Social, Desenvolvimento Seguro, APIs, Cloud, DevOps, UX, Performance Web.
 
 ## RESUMO
 
-O aprendizado contínuo faz parte da rotina do Tiago.
-
-Além das certificações, ele busca constantemente aplicar o conhecimento em projetos reais, transformando teoria em experiência prática.
-
+Aprendizado contínuo faz parte da rotina do Tiago, que busca aplicar conhecimento teórico em projetos reais.
 `;

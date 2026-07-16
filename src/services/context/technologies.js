@@ -1,317 +1,49 @@
 export const TECHNOLOGIES = `
 # TECNOLOGIAS
 
-## FRONT-END
+O Tiago tem domínio avançado em um conjunto amplo e consistente de tecnologias, cobrindo o ciclo completo de desenvolvimento — do front-end à infraestrutura.
 
-### React
+## FRONT-END (avançado em todas)
 
-Nível:
-Avançado
-
-Experiência:
-
-- Desenvolvimento de aplicações SPA.
-- Componentização.
-- Hooks.
-- Context API.
-- Consumo de APIs REST.
-- Gerenciamento de estados.
-- Performance.
-- Boas práticas.
-- Integração com bibliotecas externas.
-
----
-
-### Next.js
-
-Nível:
-Avançado
-
-Experiência:
-
-- Server Side Rendering (SSR).
-- Static Site Generation (SSG).
-- Rotas.
-- SEO.
-- Componentização.
-- APIs.
-- Estruturação de aplicações.
-
----
-
-### Vue.js
-
-Nível:
-Avançado
-
-Experiência:
-
-- Vue 3.
-- Composition API.
-- Vue Router.
-- Vuex.
-- Componentização.
-- Desenvolvimento e manutenção de aplicações.
-
----
-
-### JavaScript
-
-Nível:
-Avançado
-
-Experiência:
-
-- ES6+.
-- Programação assíncrona.
-- Manipulação do DOM.
-- Eventos.
-- APIs.
-- Estruturas de dados.
-- Boas práticas.
-
----
-
-### TypeScript
-
-Nível:
-Avançado
-
-Experiência:
-
-- Tipagem.
-- Interfaces.
-- Generics.
-- Organização de projetos.
-- Desenvolvimento de aplicações escaláveis.
-
----
-
-### HTML
-
-Nível:
-Avançado
-
-Experiência:
-
-- HTML5.
-- Semântica.
-- SEO.
-- Acessibilidade.
-
----
-
-### CSS
-
-Nível:
-Avançado
-
-Experiência:
-
-- Flexbox.
-- Grid.
-- Responsividade.
-- Animações.
-- Bootstrap.
-- Tailwind CSS.
-- CSS Modules.
-
----
+- **React**: SPA, componentização, Hooks, Context API, consumo de APIs REST, gerenciamento de estado, performance, boas práticas, integração com bibliotecas externas.
+- **Next.js**: SSR, SSG, rotas, SEO, componentização, APIs, estruturação de aplicações.
+- **Vue.js**: Vue 3, Composition API, Vue Router, Vuex, componentização, desenvolvimento e manutenção de aplicações.
+- **JavaScript**: ES6+, programação assíncrona, manipulação de DOM, eventos, APIs, estruturas de dados, boas práticas.
+- **TypeScript**: tipagem, interfaces, generics, organização de projetos escaláveis.
+- **HTML5**: semântica, SEO, acessibilidade.
+- **CSS**: Flexbox, Grid, responsividade, animações, Bootstrap, Tailwind CSS, CSS Modules.
 
 ## BACK-END
 
-### Node.js
-
-Nível:
-Avançado
-
-Experiência:
-
-- APIs REST.
-- Arquitetura.
-- Integrações.
-- Autenticação.
-- JWT.
-- Middleware.
-
----
-
-### Express
-
-Nível:
-Avançado
-
-Experiência:
-
-- Desenvolvimento de APIs.
-- Middlewares.
-- Rotas.
-- Autenticação.
-
----
-
-### NestJS
-
-Nível:
-Intermediário / Avançado
-
-Experiência:
-
-- Controllers.
-- Services.
-- Guards.
-- JWT.
-- Sequelize.
-- Arquitetura modular.
-
----
-
-### PHP
-
-Nível:
-Intermediário
-
-Experiência:
-
-- Desenvolvimento web.
-- Manutenção de aplicações.
-- Integrações.
-
----
-
-### Python
-
-Nível:
-Intermediário
-
-Experiência:
-
-- Scripts.
-- Automações.
-- Manipulação e análise de dados.
-- Estudos em IA e Cibersegurança.
-
----
+- **Node.js** (avançado): APIs REST, arquitetura, integrações, autenticação, JWT, middleware.
+- **Express** (avançado): desenvolvimento de APIs, middlewares, rotas, autenticação.
+- **NestJS** (intermediário/avançado): Controllers, Services, Guards, JWT, Sequelize, arquitetura modular.
+- **PHP** (intermediário): desenvolvimento web, manutenção de aplicações, integrações.
+- **Python** (intermediário): scripts, automações, manipulação e análise de dados, estudos em IA e cibersegurança.
 
 ## BANCO DE DADOS
 
-### MySQL
-
-Nível:
-Avançado
-
-Experiência:
-
-- Modelagem.
-- Queries.
-- Procedures.
-- Relacionamentos.
-
----
-
-### PostgreSQL
-
-Nível:
-Avançado
-
-Experiência:
-
-- Modelagem.
-- Consultas.
-- Performance.
-- Relacionamentos.
-
----
-
-### MongoDB
-
-Nível:
-Intermediário
-
-Experiência:
-
-- Collections.
-- Documents.
-- Consultas.
-- Modelagem NoSQL.
-
----
+- **MySQL** (avançado) e **PostgreSQL** (avançado): modelagem, queries/consultas, performance, relacionamentos.
+- **MongoDB** (intermediário): collections, documents, consultas, modelagem NoSQL.
 
 ## DEVOPS
 
-### Docker
-
-Nível:
-Avançado
-
-Experiência:
-
-- Docker Compose.
-- Containers.
-- Ambientes de desenvolvimento.
-- Deploy.
-
----
-
-### Git
-
-Nível:
-Avançado
-
-Experiência:
-
-- Git Flow.
-- Branches.
-- Merge.
-- Rebase.
-- Cherry-pick.
-- Code Review.
-
----
+- **Docker** (avançado): Docker Compose, containers, ambientes de desenvolvimento, deploy.
+- **Git** (avançado): Git Flow, branches, merge, rebase, cherry-pick, code review.
 
 ## CLOUD
 
-### Salesforce
-
-Experiência:
-
-- Salesforce Marketing Cloud.
-- Integrações.
-- AMPscript.
-- Cloud Pages.
-
----
+**Salesforce**: Marketing Cloud, integrações, AMPscript, Cloud Pages.
 
 ## INTELIGÊNCIA ARTIFICIAL
 
-Experiência:
-
-- Integração com APIs de IA.
-- Engenharia de Prompt.
-- Construção de assistentes inteligentes.
-- Automações utilizando LLMs.
-
----
+Integração com APIs de IA, Engenharia de Prompt, construção de assistentes inteligentes, automações com LLMs — o próprio ATLAS é exemplo direto dessa competência aplicada.
 
 ## CIBERSEGURANÇA
 
-Conhecimentos em:
+Resposta a Incidentes, Forense Computacional, Threat Intelligence, Engenharia Social, Análise de Logs, segurança de aplicações, boas práticas de desenvolvimento seguro.
 
-- Resposta a Incidentes.
-- Forense Computacional.
-- Threat Intelligence.
-- Engenharia Social.
-- Análise de Logs.
-- Segurança de Aplicações.
-- Boas práticas de desenvolvimento seguro.
+## FILOSOFIA TÉCNICA
 
----
-
-## OBSERVAÇÕES
-
-O Tiago procura utilizar a tecnologia mais adequada para resolver cada problema, evitando escolhas motivadas apenas por tendências.
-
-Ele acredita que dominar conceitos é mais importante do que decorar frameworks específicos.
-
-Seu aprendizado é contínuo, e novas tecnologias são incorporadas ao seu repertório sempre que agregam valor aos projetos.
+O Tiago escolhe a tecnologia mais adequada pra cada problema, não a mais popular no momento. Acredita que dominar conceitos importa mais que decorar frameworks — por isso transita com solidez entre React, Vue e Next.js, por exemplo, em vez de depender de uma única ferramenta. Aprendizado contínuo: novas tecnologias entram no repertório quando agregam valor real.
 `;

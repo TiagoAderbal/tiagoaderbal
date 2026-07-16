@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown";
 import TypeWriter from "./TypeWriter";
 import { TERMINAL } from "./terminalStates";
 
@@ -7,18 +8,6 @@ export default function TerminalOutput({
   setTerminalState,
   infected = false,
 }) {
-  if (terminalState === TERMINAL.ASKING && !answer) {
-    return (
-      <div className="terminal-output">
-        <span className="thinking-dots">
-          <span>.</span>
-          <span>.</span>
-          <span>.</span>
-        </span>
-      </div>
-    );
-  }
-
   if (!answer) return null;
 
   return (
@@ -31,13 +20,8 @@ export default function TerminalOutput({
           onFinish={() => setTerminalState(TERMINAL.IDLE)}
         />
       ) : (
-        <div
-          className={
-            infected ? "typewriter glitch-text corrupting" : "typewriter"
-          }
-          data-text={answer}
-        >
-          {answer}
+        <div className={`markdown-output ${infected ? "infected" : ""}`}>
+          <ReactMarkdown>{answer}</ReactMarkdown>
         </div>
       )}
     </div>

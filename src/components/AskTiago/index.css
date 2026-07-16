@@ -194,6 +194,7 @@
   text-align: left;
   display: flex;
   flex-direction: column;
+  color: #2aff55;
   gap: 12px;
 }
 
@@ -294,6 +295,149 @@
   margin-left: 2px;
   animation: blink .8s infinite;
   color: #2ec4ff;
+}
+
+.markdown-output {
+  font-family: "JetBrains Mono", monospace;
+  line-height: 1.6;
+  font-size: 15px;
+  color: white;
+  text-align: left;
+  /* markdown com listas/títulos fica estranho justificado */
+}
+
+.markdown-output p {
+  margin: 0 0 14px 0;
+}
+
+.markdown-output p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-output h1,
+.markdown-output h2,
+.markdown-output h3 {
+  color: #d7af43;
+  margin: 18px 0 10px 0;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.markdown-output h1 {
+  font-size: 20px;
+}
+
+.markdown-output h2 {
+  font-size: 18px;
+}
+
+.markdown-output h3 {
+  font-size: 16px;
+}
+
+.markdown-output strong {
+  color: #3dbdff;
+  font-weight: 700;
+}
+
+.markdown-output em {
+  color: #7fdcff;
+  font-style: italic;
+}
+
+.markdown-output ul,
+.markdown-output ol {
+  margin: 0 0 14px 0;
+  padding-left: 22px;
+}
+
+.markdown-output li {
+  margin-bottom: 6px;
+}
+
+.markdown-output code {
+  background: rgba(61, 189, 255, 0.1);
+  color: #2ec4ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.markdown-output pre {
+  background: #0d0d0d;
+  border: 1px solid rgba(215, 175, 67, 0.3);
+  border-radius: 8px;
+  padding: 14px;
+  overflow-x: auto;
+  margin: 0 0 14px 0;
+}
+
+.markdown-output pre code {
+  background: none;
+  padding: 0;
+  color: #55ff77;
+}
+
+.markdown-output a {
+  color: #3dbdff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.markdown-output a:hover {
+  color: #7fdcff;
+}
+
+.markdown-output blockquote {
+  border-left: 3px solid #d7af43;
+  padding-left: 14px;
+  margin: 0 0 14px 0;
+  color: #b8b8b8;
+  font-style: italic;
+}
+
+.markdown-output table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 0 14px 0;
+  font-size: 13px;
+}
+
+.markdown-output th,
+.markdown-output td {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.markdown-output th {
+  color: #d7af43;
+  background: rgba(215, 175, 67, 0.08);
+}
+
+.markdown-output hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 16px 0;
+}
+
+.markdown-output.infected {
+  animation: markdown-glitch 0.15s infinite steps(2);
+  filter: hue-rotate(0deg);
+}
+
+@keyframes markdown-glitch {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+    filter: hue-rotate(0deg) saturate(1);
+  }
+
+  50% {
+    transform: translate(1px, -1px);
+    filter: hue-rotate(15deg) saturate(1.8);
+  }
 }
 
 /* ===== GLITCH TEXT ===== */

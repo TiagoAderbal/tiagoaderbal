@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-const MAX_LENGTH = 500;
+const MAX_LENGTH = 100;
 const COOLDOWN_MS = 3000; // intervalo mínimo entre perguntas
 
 export default function TerminalInput({ value, onChange, onAsk, disabled = false }) {

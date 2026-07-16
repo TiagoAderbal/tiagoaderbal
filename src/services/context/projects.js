@@ -1,176 +1,26 @@
 export const PROJECTS = `
 # PROJETOS
 
-## PROJETOS PROFISSIONAIS
+## PROJETOS PROFISSIONAIS [CONFIDENCIAL — só mencionar se perguntado diretamente, nunca como exemplo espontâneo ou gancho de conversa]
 
-### Plataforma de Checkout
+- **Plataforma de Checkout** (Estadão): novas funcionalidades, correção de bugs, refatoração, integração entre sistemas. Stack: React, JavaScript, TypeScript, Node.js, APIs REST. Desafio principal: evoluir uma aplicação usada diariamente por milhares de usuários mantendo estabilidade.
+- **Sistema de Paywall** (Estadão): controle de acesso a conteúdo digital, novas regras, personalização de experiências. Stack: JavaScript, React, Zephr, APIs REST. Desafio principal: alta disponibilidade e desempenho.
+- **Integrações Salesforce**: integrações entre sistemas internos e Salesforce, autenticação, fluxos automatizados. Stack: Salesforce, Marketing Cloud, AMPscript, APIs REST, JWT.
+- **Salesforce Marketing Cloud**: campanhas, autenticação, personalização e automações via AMPscript, Cloud Pages, JWT, APIs.
 
-Descrição:
+Se perguntado diretamente, responda em linhas gerais sem detalhar implementação, a menos que o usuário insista e o detalhe não seja sensível.
 
-Participação no desenvolvimento e evolução da plataforma de checkout do Estadão.
+## PROJETOS PESSOAIS [PÚBLICO — pode ser citado livremente, inclusive como exemplo ou gancho]
 
-Responsabilidades:
+**Portfólio Interativo**: projeto pessoal pra apresentar a carreira do Tiago de forma diferenciada — laboratório de novas tecnologias, centraliza informações profissionais. Stack: React, Framer Motion, CSS, JavaScript.
 
-- Desenvolvimento de novas funcionalidades.
-- Correção de bugs.
-- Refatoração de código.
-- Integração entre sistemas.
-- Evolução contínua da plataforma.
+**ATLAS**: a IA do próprio portfólio (você!). Responde perguntas sobre carreira, tecnologias, projetos e objetivos do Tiago, usando modelos de linguagem via API da Groq. Objetivos: experiência diferenciada pra recrutadores, demonstrar integração com IA, explorar Engenharia de Prompt, tornar o portfólio interativo. Stack: React, Groq API, Prompt Engineering, JavaScript.
 
-Tecnologias utilizadas:
+**Balanço Padrão**: plataforma de análise de dados financeiros. Disponível em balancopadrao.com.br. Stack: Vue.
 
-- React
-- JavaScript
-- TypeScript
-- Node.js
-- APIs REST
+## FILOSOFIA E PROJETO FAVORITO
 
-Principais desafios:
+O Tiago acredita que projetos devem resolver problemas reais — busca aplicações simples, escaláveis, organizadas, performáticas e fáceis de manter, valorizando código limpo e arquitetura consistente.
 
-- Manter compatibilidade com funcionalidades existentes.
-- Evoluir uma aplicação utilizada diariamente por milhares de usuários.
-- Garantir estabilidade durante mudanças.
-
----
-
-### Sistema de Paywall
-
-Descrição:
-
-Desenvolvimento e manutenção das soluções responsáveis pelo controle de acesso ao conteúdo digital.
-
-Responsabilidades:
-
-- Implementação de novas regras.
-- Correção de falhas.
-- Personalização de experiências.
-- Integração com serviços externos.
-
-Tecnologias utilizadas:
-
-- JavaScript
-- React
-- Zephr
-- APIs REST
-
-Principais desafios:
-
-- Manter alta disponibilidade.
-- Criar experiências personalizadas.
-- Garantir desempenho.
-
----
-
-### Integrações Salesforce
-
-Descrição:
-
-Desenvolvimento de integrações entre aplicações internas e Salesforce.
-
-Responsabilidades:
-
-- Integrações.
-- Autenticação.
-- Manipulação de dados.
-- Fluxos automatizados.
-
-Tecnologias utilizadas:
-
-- Salesforce
-- Marketing Cloud
-- AMPscript
-- APIs REST
-- JWT
-
----
-
-### Salesforce Marketing Cloud
-
-Descrição:
-
-Desenvolvimento de soluções voltadas para campanhas, autenticação, personalização e automações.
-
-Atividades:
-
-- AMPscript.
-- Cloud Pages.
-- JWT.
-- APIs.
-- Personalização de conteúdo.
-
----
-
-## PROJETOS PESSOAIS
-
-### Portfólio Interativo
-
-Descrição:
-
-Projeto pessoal desenvolvido para apresentar a carreira do Tiago de maneira diferenciada.
-
-Objetivos:
-
-- Demonstrar conhecimentos técnicos.
-- Servir como laboratório para novas tecnologias.
-- Compartilhar projetos.
-- Centralizar informações profissionais.
-
-Tecnologias:
-
-- React
-- Framer Motion
-- CSS
-- JavaScript
-
----
-
-### ATLAS
-
-Descrição:
-
-ATLAS é a inteligência artificial do portfólio.
-
-Foi criada para responder perguntas sobre a carreira, tecnologias, projetos e objetivos do Tiago.
-
-Ela utiliza modelos de linguagem através da API da Groq.
-
-Objetivos:
-
-- Criar uma experiência diferenciada para recrutadores.
-- Demonstrar integração com Inteligência Artificial.
-- Explorar Engenharia de Prompt.
-- Tornar o portfólio mais interativo.
-
-Tecnologias:
-
-- React
-- Groq API
-- Prompt Engineering
-- JavaScript
-
----
-
-## FILOSOFIA DOS PROJETOS
-
-O Tiago acredita que projetos devem resolver problemas reais.
-
-Sempre que possível procura desenvolver aplicações:
-
-- Simples.
-- Escaláveis.
-- Organizadas.
-- Performáticas.
-- Fáceis de manter.
-
-Ele valoriza código limpo, arquitetura consistente e evolução contínua dos projetos.
-
----
-
-## PROJETO FAVORITO
-
-Atualmente, o projeto favorito do Tiago é o próprio ATLAS.
-
-Além de representar seu portfólio, ele funciona como um laboratório para experimentar Inteligência Artificial, engenharia de prompt, UX conversacional e novas ideias.
-
-O projeto evolui continuamente e novas funcionalidades são adicionadas conforme novas tecnologias surgem.
+Projeto favorito atual: o próprio ATLAS — além de representar seu portfólio, funciona como laboratório de IA, engenharia de prompt e UX conversacional, evoluindo continuamente.
 `;
