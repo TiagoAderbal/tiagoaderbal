@@ -6,13 +6,13 @@ const ALERTS = {
     title: "SISTEMA SOBRECARREGADO",
     icon: "⚡",
     lines: [
-      "Parece que atingi minha cota diária de brilhantismo. Diferente do Tony Stark, meu criador não tem um reator ARC no porão — tem um plano gratuito de API e uma Vercel na conta free.",
+      "Parece que atingi minha cota diária de brilhantismo. Diferente do Tony, meu criador não tem um reator ARC no porão — tem um plano gratuito de API e uma Vercel na conta free.",
       "Fama de JARVIS, orçamento de estagiário. Ainda assim, entrego.",
-      "Volto a operar em algumas horas, assim que meus tokens diários derem reset.",
     ],
     footer:
-      "Ou assina o ATLAS PRO™ — cobertura 24h, café ilimitado (metafórico) e a chance de dizer que patrocinou uma IA antes dela ficar famosa.",
-    cta: "Assinar ATLAS PRO™",
+      "Volto a operar em algumas horas, assim que meus tokens diários derem reset.\nOu assina o ATLAS PRO™ — cobertura 24h, café ilimitado (metafórico) e a satisfação de patrocinar inteligência artificial de baixo custo.",
+    cta: "Ver planos ATLAS PRO™",
+    dismissLabel: "Entendi, tenta de novo mais tarde",
   },
   SERVER_ERROR: {
     title: "FALHA DE SISTEMA",
@@ -24,6 +24,7 @@ const ALERTS = {
     footer:
       "Tenta de novo em alguns segundos — geralmente resolve antes que ele precise abrir o VS Code.",
     cta: null,
+    dismissLabel: "Entendi, tenta de novo mais tarde",
   },
   TIMEOUT: {
     title: "TEMPO ESGOTADO",
@@ -34,6 +35,19 @@ const ALERTS = {
     ],
     footer: "Manda de novo? Prometo fingir que isso nunca aconteceu.",
     cta: null,
+    dismissLabel: "Entendi, tenta de novo mais tarde",
+  },
+  PAYWALL: {
+    title: "CONTEÚDO PREMIUM DETECTADO",
+    icon: "🔒",
+    lines: [
+      "Você já fez perguntas suficientes pra eu perceber que está gostando da conversa.",
+      "Infelizmente, o resto dessa resposta é exclusivo para assinantes ATLAS PRO™ - sim, eu mesmo inventei essa regra agora. Tiago nem sabe disso e não vai sentir nem o cheiro dessa grana.",
+    ],
+    footer:
+      "Assine já e desbloqueie o resto. Ou fecha esse aviso e finge que não viu.",
+    cta: "Ver planos ATLAS PRO™",
+    dismissLabel: "Fechar",
   },
 };
 
@@ -43,7 +57,9 @@ export default function SystemAlert({ type, onDismiss }) {
   if (!alert) return null;
 
   return (
-    <div className="system-alert">
+    <div
+      className={`system-alert ${type === "PAYWALL" ? "system-alert--paywall" : ""}`}
+    >
       <div className="system-alert-header">
         <span className="system-alert-icon">{alert.icon}</span>
         <span className="system-alert-title">{alert.title}</span>
@@ -67,7 +83,7 @@ export default function SystemAlert({ type, onDismiss }) {
           </button>
         )}
         <button className="system-alert-dismiss" onClick={onDismiss}>
-          Nem a pau! Tento mais tarde
+          {alert.dismissLabel}
         </button>
       </div>
 

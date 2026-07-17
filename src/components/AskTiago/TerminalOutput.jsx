@@ -9,6 +9,8 @@ export default function TerminalOutput({
   errorType,
   setTerminalState,
   infected = false,
+  isPaywalled = false,
+  onDismissPaywall,
 }) {
   if (terminalState === TERMINAL.ERROR) {
     return (
@@ -33,9 +35,17 @@ export default function TerminalOutput({
           onFinish={() => setTerminalState(TERMINAL.IDLE)}
         />
       ) : (
-        <div className={`markdown-output ${infected ? "infected" : ""}`}>
-          <ReactMarkdown>{answer}</ReactMarkdown>
-        </div>
+        <>
+          <div
+            className={`markdown-output ${infected ? "infected" : ""} ${isPaywalled ? "paywall-blurred" : ""}`}
+          >
+            <ReactMarkdown>{answer}</ReactMarkdown>
+          </div>
+
+          {isPaywalled && (
+            <SystemAlert type="PAYWALL" onDismiss={onDismissPaywall} />
+          )}
+        </>
       )}
     </div>
   );

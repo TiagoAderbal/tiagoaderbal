@@ -303,7 +303,6 @@
   font-size: 15px;
   color: white;
   text-align: left;
-  /* markdown com listas/títulos fica estranho justificado */
 }
 
 .markdown-output p {
@@ -818,6 +817,58 @@
   margin: 0;
 }
 
+.markdown-output.blurred {
+  user-select: none;
+}
+
+.free-questions-counter {
+  color: #9ca3af;
+  font-size: 11px;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.3px;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.free-questions-counter.depleted {
+  color: #d7af43;
+  opacity: 1;
+}
+
+.markdown-output.paywall-blurred {
+  max-height: 90px;
+  overflow: hidden;
+  filter: blur(5px);
+  user-select: none;
+  margin-bottom: 16px;
+}
+
+.markdown-output.paywall-blurred {
+  max-height: 90px;
+  overflow: hidden;
+  filter: blur(5px);
+  user-select: none;
+  margin-bottom: 16px;
+}
+
+.markdown-output.paywall-blurred.infected {
+  animation: markdown-glitch-blurred 0.15s infinite steps(2);
+}
+
+@keyframes markdown-glitch-blurred {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+    filter: blur(5px) hue-rotate(0deg) saturate(1);
+  }
+
+  50% {
+    transform: translate(1px, -1px);
+    filter: blur(5px) hue-rotate(15deg) saturate(1.8);
+  }
+}
+
 @keyframes alert-appear {
   from {
     opacity: 0;
@@ -1040,7 +1091,6 @@
 
 /* ===== RESPONSIVIDADE ===== */
 
-/* Evita scroll horizontal causado pelos circuitos que "vazam" pra fora do frame */
 html,
 body {
   overflow-x: hidden;
@@ -1059,7 +1109,6 @@ body {
     border-radius: 14px;
   }
 
-  /* Circuitos: reduz o "vazamento" pra não estourar a viewport */
   .circuit-overlay {
     inset: -16px;
   }
@@ -1069,7 +1118,6 @@ body {
     height: 60px;
   }
 
-  /* Reactor menor */
   .reactor-container {
     margin-bottom: 14px;
   }
@@ -1079,7 +1127,6 @@ body {
     height: 90px;
   }
 
-  /* Status bar: empilha em vez de tentar caber tudo numa linha */
   .status-bar {
     flex-direction: column;
     align-items: center;
@@ -1118,7 +1165,6 @@ body {
     padding: 10px 8px;
     font-size: 14px;
     min-width: 0;
-    /* crucial: sem isso, flex-item não encolhe abaixo do conteúdo */
   }
 
   .terminal-input button {
@@ -1151,6 +1197,5 @@ body {
 
   .circuit-overlay {
     display: none;
-    /* em telas muito pequenas, os circuitos só atrapalham */
   }
 }

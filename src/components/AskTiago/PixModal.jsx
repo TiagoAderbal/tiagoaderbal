@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 
 const PIX_KEY = "39ef119c-f857-4def-b4bf-00508e817409";
+const MERCHANT_NAME = "Tiago Aderbal";
+const MERCHANT_CITY = "Sao Paulo";
 
 export default function PixModal({ onClose }) {
   const [copied, setCopied] = useState(false);
@@ -15,7 +18,7 @@ export default function PixModal({ onClose }) {
     PIX_KEY,
   )}&bgcolor=090909&color=d7af43&qzone=2`;
 
-  return (
+  const modal = (
     <div className="pix-modal-overlay" onClick={onClose}>
       <div className="pix-modal" onClick={(e) => e.stopPropagation()}>
         <button
@@ -32,7 +35,7 @@ export default function PixModal({ onClose }) {
         </div>
 
         <p className="pix-modal-subtitle">
-          Assine e desbloqueie... nada, na verdade. Mas o Tiago agradece.
+          Assine e desbloqueie... nada, na verdade. Mas a gente agradece.
         </p>
 
         <div className="pix-modal-qr-frame">
@@ -48,9 +51,10 @@ export default function PixModal({ onClose }) {
 
         <p className="pix-modal-footer">
           100% opcional. 0% desconto na piada. Contribuição livre, sem reembolso
-          — nem o Tony devolve dinheiro de pesquisa e desenvolvimento.
+          — nem o Tony Stark devolve dinheiro de P&D.
         </p>
       </div>
     </div>
   );
+  return createPortal(modal, document.body);
 }

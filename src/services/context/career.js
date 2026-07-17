@@ -15,6 +15,9 @@ Desenvolver soluções completas, escaláveis e de alta qualidade, sempre aplica
 Especialidade:
 Desenvolvimento Full Stack com foco no ecossistema JavaScript e TypeScript.
 
+Linkedin:
+https://www.linkedin.com/in/tiago-aderbal-francisco-b0a67217b/
+
 ---
 
 ## EXPERIÊNCIA PROFISSIONAL [CONFIDENCIAL — só mencionar se perguntado diretamente sobre trabalho atual/empresa]

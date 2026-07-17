@@ -1,9 +1,15 @@
 import { useState, useRef } from "react";
 
-const MAX_LENGTH = 100;
-const COOLDOWN_MS = 3000; // intervalo mínimo entre perguntas
+const MAX_LENGTH = 50;
+const COOLDOWN_MS = 3000;
 
-export default function TerminalInput({ value, onChange, onAsk, disabled = false }) {
+export default function TerminalInput({
+  value,
+  onChange,
+  onAsk,
+  disabled = false,
+  freeQuestionsLeft,
+}) {
   const [error, setError] = useState(null);
   const lastSubmitRef = useRef(0);
 
