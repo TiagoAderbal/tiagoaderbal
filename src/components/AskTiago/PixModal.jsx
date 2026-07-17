@@ -40,6 +40,10 @@ export default function PixModal({ onClose }) {
           <img src={qrUrl} alt="QR Code Pix" className="pix-modal-qr" />
         </div>
 
+        <p className="pix-modal-subtitle">
+          Chave pix aqui patrão 
+        </p>
+
         <div className="pix-modal-key">
           <span>{PIX_KEY}</span>
           <button onClick={handleCopy} className="pix-modal-copy">

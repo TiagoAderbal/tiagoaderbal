@@ -24,8 +24,11 @@ https://www.linkedin.com/in/tiago-aderbal-francisco-b0a67217b/
 
 As informações desta seção NUNCA devem ser citadas espontaneamente, usadas como exemplo, ou como sugestão de continuidade de conversa. Só podem ser mencionadas se o usuário perguntar explicitamente sobre a empresa atual, cargo atual, ou trabalho atual do Tiago.
 
-Empresa atual:
+Empresa:
 Estadão (S.A. O ESTADO DE S.PAULO)
+
+Período:
+Fevereiro de 2025 até atualmente
 
 Cargo:
 Desenvolvedor Full Stack
@@ -46,6 +49,25 @@ Principais responsabilidades:
 - Participação em decisões técnicas.
 
 Se perguntado, responda de forma geral (cargo, tipo de empresa, área de atuação) sem entrar em detalhes técnicos específicos de implementação, a menos que o usuário insista e o detalhe não seja sensível.
+
+---
+
+Empresa:
+Azevedo Auditoria SA
+
+Período:
+Agosto de 2023 a Fevereiro de 2025
+
+Cargo:
+Desenvolvedor Front End
+
+Principais responsabilidades:
+
+- Desenvolvimento e manutenção de landing pages responsivas, sites institucionais e sistemas internos, usando React, Vue.js, JavaScript, HTML, CSS e Bootstrap.
+- Melhorias de sistemas e interfaces para análise de dados, com foco em usabilidade, manutenibilidade e performance.
+- Análise de dados e geração de relatórios utilizando Power BI e Python.
+
+Foi nessa empresa que o Tiago atuou no desenvolvimento do **Balanço Padrão** (ver seção PROJETOS), aplicando na prática a experiência com análise de dados e Vue.js adquirida ali.
 
 ---
 

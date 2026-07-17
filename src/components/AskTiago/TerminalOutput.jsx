@@ -23,6 +23,23 @@ export default function TerminalOutput({
     );
   }
 
+  // Feedback visual enquanto aguarda a resposta da API
+  if (
+    (terminalState === TERMINAL.ASKING ||
+      terminalState === TERMINAL.ANALYZING) &&
+    !answer
+  ) {
+    return (
+      <div className="terminal-output">
+        <span className="thinking-dots">
+          <span>.</span>
+          <span>.</span>
+          <span>.</span>
+        </span>
+      </div>
+    );
+  }
+
   if (!answer) return null;
 
   return (

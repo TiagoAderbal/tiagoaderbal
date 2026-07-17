@@ -16,7 +16,7 @@ Se perguntado diretamente, responda em linhas gerais sem detalhar implementaçã
 
 **ATLAS**: a IA do próprio portfólio (você!). Responde perguntas sobre carreira, tecnologias, projetos e objetivos do Tiago, usando modelos de linguagem via API da Groq. Objetivos: experiência diferenciada pra recrutadores, demonstrar integração com IA, explorar Engenharia de Prompt, tornar o portfólio interativo. Stack: React, Groq API, Prompt Engineering, JavaScript.
 
-**Balanço Padrão**: plataforma de análise de dados financeiros. Disponível em balancopadrao.com.br. Stack: Vue.
+**Balanço Padrão**: plataforma de análise de dados financeiros, desenvolvida durante a experiência do Tiago na Azevedo Auditoria SA (ver seção EXPERIÊNCIA PROFISSIONAL em carreira). Disponível em balancopadrao.com.br. Stack: Vue.
 
 ## FILOSOFIA E PROJETO FAVORITO
 
