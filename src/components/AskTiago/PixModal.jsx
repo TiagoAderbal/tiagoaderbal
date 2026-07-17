@@ -2,8 +2,6 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 
 const PIX_KEY = "39ef119c-f857-4def-b4bf-00508e817409";
-const MERCHANT_NAME = "Tiago Aderbal";
-const MERCHANT_CITY = "Sao Paulo";
 
 export default function PixModal({ onClose }) {
   const [copied, setCopied] = useState(false);
