@@ -1,5 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 import { CONTEXT } from "../src/services/context/index.js";
+import { saveQuestion } from "./saveQuestion.js"
 
 const modelCooldowns = new Map();
 
@@ -89,6 +90,8 @@ export default async function handler(req, res) {
   if (trimmed.length > 50) {
     return res.status(400).json({ type: "INVALID_INPUT" });
   }
+
+  void saveQuestion(question);
 
   if (isSuspicious(trimmed)) {
     return res.status(200).json({
