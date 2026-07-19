@@ -13,7 +13,7 @@ const DEMO_COMMANDS = {
 const PAYWALL_AT_QUESTION = 3;
 
 export default function AskTiago() {
-  const [opened, setOpened] = useState(false);
+  const [opened, setOpened] = useState(true);
   const [terminalState, setTerminalState] = useState(TERMINAL.IDLE);
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");

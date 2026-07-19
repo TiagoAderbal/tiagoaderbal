@@ -16,7 +16,6 @@ export default function ArcReactor({ terminalState, onClick, infected = false })
           <circle cx="100" cy="100" r="10" className="reactor-core" />
         </svg>
       </button>
-      <p className="arc-reator-text" onClick={onClick}>Don't click me</p>
     </div>
   );
 }

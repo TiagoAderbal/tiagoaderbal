@@ -481,13 +481,6 @@
   z-index: 1;
 }
 
-.arc-reator-text {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 18px;
-  color: #d42035;
-  padding-top: 10px;
-}
-
 .arc-reactor {
   width: 140px;
   height: 140px;
@@ -495,6 +488,7 @@
   background: transparent;
   cursor: pointer;
   padding: 0;
+  margin-bottom: 20px;
 }
 
 .reactor-svg {
