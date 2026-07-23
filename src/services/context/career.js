@@ -16,7 +16,10 @@ Especialidade:
 Desenvolvimento Full Stack com foco no ecossistema JavaScript e TypeScript.
 
 Linkedin:
-https://www.linkedin.com/in/tiago-aderbal-francisco-b0a67217b/
+https://www.linkedin.com/in/tiago-aderbal/
+
+Portfólio (local onde você, ATLAS, vive):
+https://tiagoaderbal.vercel.app
 
 ---
 

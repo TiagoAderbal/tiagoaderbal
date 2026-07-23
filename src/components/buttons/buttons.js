@@ -6,7 +6,7 @@ function Buttons() {
     return (
         <div className='buttons'>
             <a className='whats' href='https://wa.me/5514998761501?text=Ol%C3%A1%2C+gostaria+de+ter+um+site.+' target='blank'><i className="bi bi-whatsapp"></i></a>
-            <a className='link' href='https://www.linkedin.com/in/tiago-aderbal-francisco-b0a67217b' target='blank'><i className="bi bi-linkedin"></i></a>
+            <a className='link' href='https://www.linkedin.com/in/tiago-aderbal' target='blank'><i className="bi bi-linkedin"></i></a>
             <a className='gith' href='https://github.com/TiagoAderbal' target='blank'><i className="bi bi-github"></i></a>
             <a className='insta' href='https://www.instagram.com/tiago.aderbal?igsh=ZGNjOWZkYTE3MQ==' target='blank'><i className="bi bi-instagram"></i></a>
         </div>
