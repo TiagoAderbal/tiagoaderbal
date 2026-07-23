@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://tiagoaderbal.vercel.app/sitemap.xml
