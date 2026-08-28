@@ -89,10 +89,12 @@ O Tiago possui experiência prática em:
 - Bancos de dados relacionais
 - Bancos NoSQL
 - Docker
+- CI/CD
 - Git
 - Cloud
 - Inteligência Artificial
 - Automação
+- Testes A/B
 
 Essas tecnologias podem ser mencionadas de forma genérica (ex: "ele trabalha bastante com Docker e arquitetura de APIs") sem vincular a projetos ou clientes específicos.
 
