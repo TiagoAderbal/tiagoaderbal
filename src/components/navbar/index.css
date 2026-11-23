@@ -1,0 +1,96 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 6vw;
+  background: rgba(248, 248, 244, 0.92);
+  border-bottom: 1px solid #e8e9e2;
+  backdrop-filter: blur(16px);
+}
+
+.site-nav {
+  max-width: 1240px;
+  height: 76px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  color: #171914;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.nav-brand span,
+.nav-links a span { color: #b4c72c; }
+
+.nav-links { display: flex; align-items: center; gap: clamp(1.25rem, 4vw, 3.2rem); }
+.nav-actions { display: flex; align-items: center; gap: 24px; }
+.nav-links a {
+  color: #666960;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+.nav-links a:hover,
+.nav-links a.active { color: #171914; }
+.nav-links a.active::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin: 5px auto -11px;
+  border-radius: 50%;
+  background: #b4c72c;
+}
+.theme-toggle { position: relative; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid #e3e5dc; border-radius: 50%; background: transparent; color: #303328; cursor: pointer; transition: background 160ms ease, border-color 160ms ease, transform 160ms ease; }
+.theme-character-icon { display: block; width: 32px; height: 32px; border-radius: 50%; object-fit: contain; }
+.vader-icon { mix-blend-mode: multiply; }
+.yoda-icon { filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2)); }
+.theme-toggle:hover { transform: rotate(-12deg); border-color: #b4c72c; background: #eff2df; }
+.theme-tooltip { position: absolute; z-index: 2; top: calc(100% + 9px); right: 50%; padding: 6px 9px; border-radius: 5px; background: #20221a; color: #fff; font: 0.64rem 'JetBrains Mono', monospace; opacity: 0; pointer-events: none; transform: translate(50%, -4px); transition: opacity 140ms ease, transform 140ms ease; white-space: nowrap; }
+.theme-toggle:hover .theme-tooltip, .theme-toggle:focus-visible .theme-tooltip { opacity: 1; transform: translate(50%, 0); }
+.nav-toggle { display: none; }
+:root[data-theme="dark"] .nav-links { background: transparent; border-color: transparent; }
+
+@media (max-width: 640px) {
+  .site-header { padding: 0 6vw; }
+  .site-nav { height: 66px; }
+  .nav-toggle { margin-left: auto; }
+  .nav-actions { margin-left: 10px; }
+  .nav-toggle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #e4e5dd;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .nav-toggle span { width: 16px; height: 2px; background: #171914; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    padding: 18px 6vw 24px;
+    background: #f8f8f4;
+    border-bottom: 1px solid #e8e9e2;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links a { padding: 13px 0; }
+  .nav-links a.active::after { display: none; }
+  :root[data-theme="dark"] .nav-links { background: #11130f; border-color: #30342a; }
+}

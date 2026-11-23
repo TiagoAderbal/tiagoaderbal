@@ -1,28 +1,9 @@
-import React, { useEffect, useState } from "react";
-import NavbarSec from "../../components/navbar_sec/navbar_sec";
+import React from "react";
 import ProjectList from "../../components/ProjectList/ProjectList";
 import "./index.css";
 import { motion } from "framer-motion";
 
 function Projects() {
-  const [showImage, setShowImage] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setShowImage(true);
-      } else {
-        setShowImage(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <motion.div
       className="App Projects"
@@ -30,11 +11,15 @@ function Projects() {
       animate={{ opacity: 1 }}
       transition={{ delay: 0.2, ease: "linear" }}
     >
-      <NavbarSec />
-      <ProjectList />
-      {showImage && (
-        <img src="./assets/imgs/droid.png" alt="droid" id="fixed-bottom" />
-      )}
+      <main className="content-page projects-page">
+        <header className="page-intro">
+          <span className="eyebrow">TRABALHOS SELECIONADOS</span>
+          <h1>Projetos<span>.</span></h1>
+          <p>Produtos, experimentos e soluções que já saíram do papel. Nem tudo ta aqui por questões de privacidade e confidencialidade.</p>
+        </header>
+        <ProjectList />
+        <footer className="site-footer">© {new Date().getFullYear()} Tiago Aderbal</footer>
+      </main>
     </motion.div>
   );
 }

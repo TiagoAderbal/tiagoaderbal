@@ -54,6 +54,7 @@
   padding: 35px;
   position: relative;
   overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
 
   animation: virus-border 4s infinite, glitch-shake 5s infinite;
 }
@@ -165,6 +166,7 @@
   font-size: 38px;
   letter-spacing: 4px;
   font-weight: 300;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .status-bar span {

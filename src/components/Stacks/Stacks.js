@@ -15,7 +15,6 @@ const Stacks = () => {
   return (
     <div className="container mb-5">
       <h2>My Stacks</h2>
-      <h4 id="text-nav">PS.: passe o mouse sobre os ícones, e já aviso que no celular não funciona. se ficou curioso, usa o computador. valeu, tamo junto...</h4>
       <div className="row d-flex justify-content-center">
         {/* Primeira linha */}
         <div className="col-3">

@@ -1,35 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-.App {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  /* font-family: 'Montserrat', sans-serif; */
-  /* font-family: 'Titillium Web', sans-serif; */
-  padding: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box;
-  outline-color: #cad74f;
-  background: #fff;
-  font-family: 'Montserrat';
+:root { --page: #f8f8f4; --ink: #171914; --muted: #6f726a; --accent: #b4c72c; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--page); color: var(--ink); font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+button, input, textarea, a { outline-color: var(--accent); }
+.page-intro h1, .article-header h1, .article-card h2, .section-heading h2,
+.markdown-article h2, .markdown-article h3, .contact-card-copy strong {
+  font-family: 'Space Grotesk', sans-serif;
+}
+code, pre { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; }
+.App { min-height: calc(100vh - 76px); margin: 0 !important; padding: 0 !important; background: var(--page); }
+.container-fluid { margin: 0 !important; padding: 0 !important; }
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #11130f;
+  --ink: #f0f1e9;
+  --muted: #a6aa9c;
+  --accent: #bfd744;
+  --surface: #1a1d17;
+  --surface-raised: #20231c;
+  --line: #30342a;
+  --soft-accent: #2a3218;
 }
 
-body,
-button,
-input,
-a,
-ul,
-li,
-textarea {
-  outline-color: #cad74f;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.container-fluid {
-  padding: 0 !important;
-  margin: 0 !important;
-}
+:root[data-theme="dark"] .site-header { background: rgba(17, 19, 15, 0.92); border-color: var(--line); }
+:root[data-theme="dark"] .nav-brand,
+:root[data-theme="dark"] .nav-links a.active,
+:root[data-theme="dark"] .nav-toggle span { color: var(--ink); background-color: transparent; }
+:root[data-theme="dark"] .nav-links a { color: #a6aa9c; }
+:root[data-theme="dark"] .nav-toggle span { background: var(--ink); }
+:root[data-theme="dark"] .theme-toggle { border-color: #414638; color: var(--ink); }
+:root[data-theme="dark"] .theme-toggle:hover { background: var(--soft-accent); }
+:root[data-theme="dark"] .home-hero,
+:root[data-theme="dark"] .Home,
+:root[data-theme="dark"] .Projects,
+:root[data-theme="dark"] .content-page { background: var(--page); color: var(--ink); }
+:root[data-theme="dark"] .home-hero,
+:root[data-theme="dark"] .site-footer { border-color: var(--line); }
+:root[data-theme="dark"] .eyebrow,
+:root[data-theme="dark"] .home-intro,
+:root[data-theme="dark"] .page-intro p,
+:root[data-theme="dark"] .article-meta,
+:root[data-theme="dark"] .article-read,
+:root[data-theme="dark"] .contact-card-copy > span { color: var(--muted); }
+:root[data-theme="dark"] .typing-prefix,
+:root[data-theme="dark"] .react-typewriter-text,
+:root[data-theme="dark"] .page-intro h1,
+:root[data-theme="dark"] .article-header h1,
+:root[data-theme="dark"] .article-card h2,
+:root[data-theme="dark"] .section-heading h2,
+:root[data-theme="dark"] .markdown-article h2,
+:root[data-theme="dark"] .markdown-article h3,
+:root[data-theme="dark"] .contact-card-copy strong,
+:root[data-theme="dark"] .infection-zone { color: var(--ink) !important; }
+:root[data-theme="dark"] .infection-zone { background: #151711; }
+:root[data-theme="dark"] .infection-title { color: var(--ink) !important; }
+:root[data-theme="dark"] .site-footer { color: #858a7a; }
+:root[data-theme="dark"] .tiago-dock .dock-icons,
+:root[data-theme="dark"] .dock-popover { border-color: #373c2e; background: rgba(29, 32, 25, 0.96); color: var(--ink); }
+:root[data-theme="dark"] .dock-button { color: var(--ink); }
+:root[data-theme="dark"] .dock-button:hover,
+:root[data-theme="dark"] .dock-button.is-active { border-color: #46502b; background: #30391e; }
+:root[data-theme="dark"] .dock-popover::after { border-color: #373c2e; background: #1d2019; }
+:root[data-theme="dark"] .dock-popover p,
+:root[data-theme="dark"] .dock-popover small { color: #a6aa9c; }
+:root[data-theme="dark"] .stack-chips span { border-color: #3a4030; background: #25291f; color: #e2e5d9; }
+:root[data-theme="dark"] .contact-card,
+:root[data-theme="dark"] .article-card,
+:root[data-theme="dark"] .blog-search,
+:root[data-theme="dark"] .Projects .card { border-color: var(--line); background: var(--surface); color: var(--ink); }
+:root[data-theme="dark"] .Projects .card-text { color: #b8bcae !important; }
+:root[data-theme="dark"] .Projects .btn-secondary { background: #d0e66b; color: #1a1d13; }
+:root[data-theme="dark"] .contact-card:hover { color: var(--ink); }
+:root[data-theme="dark"] .contact-card-featured { border-color: #65752b; background: #252c18; }
+:root[data-theme="dark"] .contact-icon,
+:root[data-theme="dark"] .contact-card-featured .contact-icon { background: #333d20; color: #d1e879; }
+:root[data-theme="dark"] .blog-search { color: #a6aa9c; }
+:root[data-theme="dark"] .blog-search input { color: var(--ink); }
+:root[data-theme="dark"] .category-filters button { border-color: #3a4030; color: #c3c7b9; }
+:root[data-theme="dark"] .category-filters button.selected { border-color: #d0e66b; background: #d0e66b; color: #1a1d13; }
+:root[data-theme="dark"] .article-card p,
+:root[data-theme="dark"] .markdown-article,
+:root[data-theme="dark"] .markdown-article blockquote,
+:root[data-theme="dark"] .back-link { color: #b8bcae; }
+:root[data-theme="dark"] .markdown-article h2,
+:root[data-theme="dark"] .markdown-article h3 { color: var(--ink); }
+:root[data-theme="dark"] .article-cover-placeholder { background: linear-gradient(135deg, #29301c, #1c2018); color: #d0e66b; }
+:root[data-theme="dark"] .blog-empty { border-color: #3a4030; }
+:root[data-theme="dark"] .blog-empty h2,
+:root[data-theme="dark"] .blog-empty p,
+:root[data-theme="dark"] .text-link,
+:root[data-theme="dark"] .linkedin-original { color: var(--ink); }
+:root[data-theme="dark"] .markdown-article a { color: #d0e66b; }

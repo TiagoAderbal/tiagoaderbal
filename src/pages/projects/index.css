@@ -1,24 +1,4 @@
-.Projects {
-    background: linear-gradient(-15deg, #fff 92%, #6f6f6f 99%);
-}
-
-#fixed-bottom {
-    position: fixed;
-    width: 10rem;
-    top: 1rem;
-    right: -50px;
-    transform: translateX(-50%);
-    z-index: 10;
-}
-
-@media (max-width: 720px) {
-
-    #fixed-bottom {
-        position: fixed;
-        width: 7rem;
-        top: 8rem;
-        right: -50px;
-        transform: translateX(-50%);
-        z-index: 10;
-    }
-}
+.Projects { background: #f8f8f4; }
+.Projects .projects-page { padding-bottom: 54px; }
+.Projects .page-intro { padding-bottom: 42px; }
+.Projects .container { max-width: 1240px; }

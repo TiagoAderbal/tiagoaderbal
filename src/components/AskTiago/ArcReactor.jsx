@@ -2,7 +2,7 @@ export default function ArcReactor({ terminalState, onClick, infected = false })
   const reactorClass = infected ? "infected" : terminalState.toLowerCase();
 
   return (
-    <div className="reactor-container d-inline">
+    <div className="reactor-container">
       <button
         className={`arc-reactor ${reactorClass}`}
         onClick={onClick}

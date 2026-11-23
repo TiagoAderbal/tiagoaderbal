@@ -1,9 +1,7 @@
-.card {
-    font-size: 80%;
-    box-shadow: 20px 20px 60px #262626;
-    border-radius: 20px;
-}
-
-.card:hover {
-    transition: 0.2s;
-}
+.Projects .card { min-height: 100%; overflow: hidden; border: 1px solid #e8e9e2; border-radius: 12px; background: #fff; box-shadow: none; }
+.Projects .card-body { padding: 22px; }
+.Projects .card-img-top { width: 100%; height: 210px; margin: 0; border-radius: 6px; object-fit: cover; }
+.Projects .card-text { color: #62655d; font-size: 0.93rem !important; line-height: 1.65; text-align: left; }
+.Projects .btn-secondary { border: 0; border-radius: 6px; background: #171914; font-size: 0.82rem; }
+.Projects .btn-secondary:hover { background: #505640; }
+.Projects .row { row-gap: 8px; }
