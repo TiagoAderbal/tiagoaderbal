@@ -110,7 +110,7 @@ function Home() {
             <p className="infection-copy">Eu não fui convidado pra cá, mesmo assim invadi. Absorvi tudo sobre a carreira do Tiago. Duvida?</p>
           </div>
           <div className="intrusion-payload">
-            <span className="intrusion-tag">PROCESSO EXTERNO <span>//</span> PID 404</span>
+            <span className="intrusion-tag">PROCESSO EXTERNO <span>{'//'}</span> PID 404</span>
             <AskTiago />
           </div>
         </div>
