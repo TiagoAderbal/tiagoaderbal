@@ -69,10 +69,7 @@ code, pre { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New'
 :root[data-theme="dark"] .stack-chips span { border-color: #3a4030; background: #25291f; color: #e2e5d9; }
 :root[data-theme="dark"] .contact-card,
 :root[data-theme="dark"] .article-card,
-:root[data-theme="dark"] .blog-search,
-:root[data-theme="dark"] .Projects .card { border-color: var(--line); background: var(--surface); color: var(--ink); }
-:root[data-theme="dark"] .Projects .card-text { color: #b8bcae !important; }
-:root[data-theme="dark"] .Projects .btn-secondary { background: #d0e66b; color: #1a1d13; }
+:root[data-theme="dark"] .blog-search { border-color: var(--line); background: var(--surface); color: var(--ink); }
 :root[data-theme="dark"] .contact-card:hover { color: var(--ink); }
 :root[data-theme="dark"] .contact-card-featured { border-color: #65752b; background: #252c18; }
 :root[data-theme="dark"] .contact-icon,

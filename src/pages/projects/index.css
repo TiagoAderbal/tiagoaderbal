@@ -1,4 +1,17 @@
-.Projects { background: #f8f8f4; }
-.Projects .projects-page { padding-bottom: 54px; }
-.Projects .page-intro { padding-bottom: 42px; }
-.Projects .container { max-width: 1240px; }
+.Projects { background: var(--page); }
+
+.project-card { display: flex; flex-direction: column; }
+.project-cover { display: block; object-position: top center; }
+
+.project-stack { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 22px; }
+.project-stack span { padding: 4px 8px; border: 1px solid #e5e8dc; border-radius: 5px; background: #f7f8f2; color: #45483d; font-size: 0.7rem; }
+
+.project-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: auto; }
+.project-links a { color: #20221c; font-size: 0.82rem; font-weight: 700; text-decoration: none; }
+.project-links a span { padding-left: 4px; color: #69751d; }
+.project-links a:hover { color: #69751d; }
+
+:root[data-theme="dark"] .project-stack span { border-color: #3a4030; background: #25291f; color: #e2e5d9; }
+:root[data-theme="dark"] .project-links a { color: var(--ink); }
+:root[data-theme="dark"] .project-links a span,
+:root[data-theme="dark"] .project-links a:hover { color: #d0e66b; }
