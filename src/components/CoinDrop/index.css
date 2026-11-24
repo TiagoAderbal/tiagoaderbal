@@ -62,9 +62,42 @@
   max-width: 520px;
   max-height: calc(100vh - 32px);
   overflow-y: auto;
-  background-color: #0b0b0b;
-  background-image: linear-gradient(rgba(255, 42, 42, 0.06), rgba(255, 42, 42, 0.06));
 }
+
+.system-alert.system-alert--galactic {
+  border-color: rgba(255, 232, 31, 0.35);
+  background-color: #05060a;
+  background-image:
+    radial-gradient(1px 1px at 18px 24px, #fff, transparent),
+    radial-gradient(1px 1px at 96px 70px, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(1.5px 1.5px at 150px 132px, #fff, transparent),
+    radial-gradient(1px 1px at 52px 150px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 210px 36px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1.5px 1.5px at 236px 186px, rgba(255, 255, 255, 0.85), transparent);
+  background-size: 260px 220px;
+}
+
+.system-alert--galactic .system-alert-media {
+  display: flex;
+  justify-content: center;
+  margin: -24px -24px 6px;
+  padding: 24px 0 0;
+  background:
+    linear-gradient(to bottom, rgba(5, 6, 10, 0) 55%, #05060a 100%),
+    radial-gradient(ellipse 52% 66% at 50% 48%, #fff 0%, rgba(255, 255, 255, 0.8) 36%, rgba(255, 255, 255, 0.3) 60%, rgba(255, 255, 255, 0) 78%);
+}
+
+.system-alert--galactic .system-alert-media img {
+  display: block;
+  width: auto;
+  height: clamp(140px, 26vh, 190px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 72%, transparent 100%);
+}
+
+.system-alert--galactic .system-alert-icon,
+.system-alert--galactic .system-alert-title { color: #ffe81f; }
+.system-alert--galactic .system-alert-icon { animation: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .coin { transition: opacity 200ms ease; transform: none; }

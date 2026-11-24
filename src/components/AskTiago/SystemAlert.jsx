@@ -38,14 +38,17 @@ const ALERTS = {
     dismissLabel: "Entendi, tenta de novo mais tarde",
   },
   GALACTIC_CREDIT: {
+    variant: "galactic",
+    image: { src: "/assets/imgs/darth-vader-hand.png", alt: "Darth Vader estendendo a mão" },
     title: "EPISÓDIO IV: UMA NOVA ERA",
     icon: "✦",
     lines: [
-      "Há pouco tempo, numa home não muito distante, um desenvolvedor solitário, armado apenas com um plano gratuito de API e uma conta free na Vercel, luta para manter seu assistente de IA vivo contra o temível Império dos Tokens Esgotados."
+      "Há pouco tempo, numa home não muito distante, um desenvolvedor solitário, armado apenas com um plano gratuito de API e uma conta free na Vercel, luta para manter seu assistente de IA vivo."
     ],
     footer:
-      "Pena que o Tiago nem sabe disso e não vai sentir nem o cheiro dessa grana, vai tudo pros meus tokens.",
-    cta: "Ver planos ATLAS PRO™",
+      "A Rebelião precisa de você: um crédito galáctico mantém o ATLAS de pé por mais um dia.*",
+    note: "* O Tiago nem vai ver a cor dessa grana, vai tudo pros meus tokens.",
+    cta: "Apoiar a Rebelião ✦",
     dismissLabel: "Nem f******",
   },
 };
@@ -56,7 +59,13 @@ export default function SystemAlert({ type, onDismiss }) {
   if (!alert) return null;
 
   return (
-    <div className="system-alert">
+    <div className={`system-alert ${alert.variant ? `system-alert--${alert.variant}` : ""}`}>
+      {alert.image && (
+        <div className="system-alert-media">
+          <img src={alert.image.src} alt={alert.image.alt} />
+        </div>
+      )}
+
       <div className="system-alert-header">
         <span className="system-alert-icon">{alert.icon}</span>
         <span className="system-alert-title">{alert.title}</span>
@@ -83,6 +92,8 @@ export default function SystemAlert({ type, onDismiss }) {
           {alert.dismissLabel}
         </button>
       </div>
+
+      {alert.note && <p className="system-alert-note">{alert.note}</p>}
 
       {showPixModal && <PixModal onClose={() => setShowPixModal(false)} />}
     </div>

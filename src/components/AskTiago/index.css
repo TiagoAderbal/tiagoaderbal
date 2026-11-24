@@ -688,6 +688,13 @@
   cursor: pointer;
 }
 
+.system-alert-note {
+  margin: 16px 0 0;
+  color: #7c818c;
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
 /* ===== PIX MODAL ===== */
 
 .pix-modal-overlay {
