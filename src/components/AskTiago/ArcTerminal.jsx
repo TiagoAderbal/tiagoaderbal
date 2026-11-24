@@ -42,12 +42,10 @@ export default function ArcTerminal(props) {
               value={props.question}
               onChange={(e) => props.setQuestion(e.target.value)}
               onAsk={props.onAsk}
-              freeQuestionsLeft={props.freeQuestionsLeft}
               disabled={
                 props.terminalState === TERMINAL.ASKING ||
                 props.terminalState === TERMINAL.ANALYZING ||
-                props.terminalState === TERMINAL.TYPING ||
-                props.isPaywalled
+                props.terminalState === TERMINAL.TYPING
               }
             />
 
@@ -55,8 +53,6 @@ export default function ArcTerminal(props) {
               terminalState={props.terminalState}
               answer={props.answer}
               errorType={props.errorType}
-              isPaywalled={props.isPaywalled}
-              onDismissPaywall={props.onDismissPaywall}
               setTerminalState={props.setTerminalState}
               infected={infected}
             />

@@ -1,6 +1,6 @@
 .Home { background: #f8f8f4; }
-.home-hero { min-height: min(720px, calc(100vh - 76px)); padding: 0 7vw; display: flex; align-items: center; border-bottom: 1px solid #e9eae3; }
-.home-hero-layout { width: 100%; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) 72px; align-items: center; gap: clamp(36px, 5vw, 88px); }
+.home-hero { min-height: min(720px, calc(100vh - 76px)); padding: 0 6vw; display: flex; align-items: center; border-bottom: 1px solid #e9eae3; }
+.home-hero-layout { width: 100%; max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) 82px; align-items: center; gap: clamp(36px, 5vw, 88px); }
 .home-hero-copy { width: 100%; max-width: none; min-width: 0; margin: 0; padding: 48px 0; text-align: left; }
 .home-hero-copy > .eyebrow { margin-bottom: 35px; }
 .home-hero-copy .profile-heading { display: grid; grid-template-columns: 140px minmax(0, 1fr); align-items: center; gap: 32px; }
@@ -14,23 +14,24 @@
 @keyframes typing-cursor-blink { 50% { opacity: 0; } }
 .home-intro { width: calc(100% - 172px); max-width: none; margin: 26px 0 0 172px; color: #6f726a; font-size: 1rem; line-height: 1.7; }
 .tiago-dock { position: relative; z-index: 4; justify-self: end; font-family: 'JetBrains Mono', monospace; }
-.dock-icons { display: flex; flex-direction: column; align-items: center; gap: 9px; padding: 10px 8px; border: 1px solid rgba(223, 226, 213, 0.9); border-radius: 18px; background: rgba(255, 255, 250, 0.82); box-shadow: 0 12px 36px rgba(30, 36, 20, 0.1); backdrop-filter: blur(14px); }
-.dock-button { position: relative; display: grid; width: 48px; height: 48px; place-items: center; border: 1px solid transparent; border-radius: 13px; background: transparent; color: #272a20; cursor: pointer; transition: transform 160ms ease, background 160ms ease, border-color 160ms ease; }
+.dock-icons { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 12px 10px; border: 1px solid rgba(223, 226, 213, 0.9); border-radius: 20px; background: rgba(255, 255, 250, 0.82); box-shadow: 0 12px 36px rgba(30, 36, 20, 0.1); backdrop-filter: blur(14px); }
+.dock-button { position: relative; display: grid; width: 58px; height: 58px; place-items: center; border: 1px solid transparent; border-radius: 15px; background: transparent; color: #272a20; cursor: pointer; transition: transform 160ms ease, background 160ms ease, border-color 160ms ease; }
 .dock-button:hover, .dock-button.is-active { transform: scale(1.08); border-color: #e1e6cd; background: #f1f5e1; }
-.dock-glyph { font-size: 1.5rem; line-height: 1; }
-.dock-coffee-icon { width: 25px; height: 25px; object-fit: contain; }
+.dock-glyph { font-size: 1.75rem; line-height: 1; }
+.dock-coffee-icon { width: 30px; height: 30px; object-fit: contain; }
 .coffee-readout { gap: 7px !important; }
 .coffee-popover-icon { width: 21px; height: 21px; object-fit: contain; }
-.build-glyph { display: grid; width: 23px; height: 23px; place-items: center; border-radius: 50%; background: #b6d83a; color: #20221a; font-size: 0.95rem; font-weight: 800; }
-.stack-glyph { color: #687f16; font-size: 1rem; font-weight: 800; letter-spacing: -0.12em; }
-.random-glyph { display: grid; width: 26px; height: 26px; place-items: center; border: 1px dashed #8e9a64; border-radius: 50%; color: #64752a; font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 700; }
+.build-glyph { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 50%; background: #b6d83a; color: #20221a; font-size: 1.1rem; font-weight: 800; }
+.dock-svg { width: 27px; height: 27px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.bug-glyph { color: #c2414f; }
+.stack-glyph { color: #687f16; font-size: 1.2rem; font-weight: 800; letter-spacing: -0.12em; }
+.random-glyph { display: grid; width: 31px; height: 31px; place-items: center; border: 1px dashed #8e9a64; border-radius: 50%; color: #64752a; font-family: 'JetBrains Mono', monospace; font-size: 1.15rem; font-weight: 700; }
 .dock-popover { position: absolute; top: var(--popover-top, 50%); right: calc(100% + 18px); width: 265px; padding: 17px; border: 1px solid #dfe2d5; border-radius: 10px; background: #fffefa; color: #20221a; box-shadow: 0 12px 36px rgba(30, 36, 20, 0.14); transform: translateY(-50%); animation: dock-pop-in 150ms ease-out; }
 .dock-popover::after { position: absolute; top: 50%; left: 100%; width: 8px; height: 8px; border-top: 1px solid #dfe2d5; border-right: 1px solid #dfe2d5; background: #fffefa; content: ""; transform: translate(-4px, -50%) rotate(45deg); }
 .popover-kicker { display: block; margin-bottom: 9px; color: #7d8468; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; }
 .dock-popover strong { display: flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif; font-size: 0.94rem; }
 .dock-popover p { margin: 8px 0 0; color: #717468; font-size: 0.68rem; line-height: 1.55; }
 .dock-popover small { display: block; margin-top: 10px; color: #929688; font-size: 0.59rem; }
-.palmeiras-popover-logo { display: block; width: 64px; height: 64px; margin: 0 auto 14px; object-fit: contain; }
 .dock-popover .build-led { display: inline-block; width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: #a8d42a; box-shadow: 0 0 8px rgba(168, 212, 42, 0.65); }
 .stack-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .stack-chips span { padding: 5px 8px; border: 1px solid #e5e8dc; border-radius: 5px; background: #f7f8f2; color: #45483d; font-size: 0.65rem; }
@@ -142,9 +143,9 @@
   .home-hero { min-height: auto; }
   .home-hero-layout { max-width: 700px; grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 36px 0 42px; }
   .home-hero-copy { padding: 12px 0 0; }
-  .tiago-dock { order: -1; justify-self: center; }
-  .dock-icons { flex-direction: row; gap: 7px; padding: 7px 9px; border-radius: 15px; }
-  .dock-button { width: 42px; height: 42px; }
+  .tiago-dock { order: -1; justify-self: stretch; }
+  .dock-icons { flex-direction: row; justify-content: space-between; gap: 8px; padding: 8px 14px; border-radius: 18px; }
+  .dock-button { width: 52px; height: 52px; }
   .dock-popover { top: calc(100% + 12px); right: auto; left: var(--popover-left, 50%); transform: translateX(-50%); animation-name: dock-pop-in-mobile; }
   .dock-popover::after { top: -5px; left: 50%; transform: translateX(-50%) rotate(-45deg); }
 }
@@ -164,8 +165,9 @@
   .home-hero-copy .typing-line { --typing-size: clamp(18px, 6vw, 40px); }
   .home-intro { width: calc(100% - 88px); margin-left: 88px; }
   .home-intro { font-size: 0.91rem; }
-  .dock-icons { gap: 4px; padding: 6px; }
-  .dock-button { width: 40px; height: 40px; }
+  .dock-icons { gap: 2px; padding: 6px 8px; }
+  .dock-button { flex: 1 1 0; width: auto; max-width: 48px; height: 46px; }
+  .dock-svg { width: 24px; height: 24px; }
   .dock-popover { width: min(265px, calc(100vw - 32px)); }
   .home-chat-section { padding: 62px 5vw 44px; }
   .home-chat-section .section-heading { max-width: 100%; }

@@ -8,7 +8,6 @@ export default function TerminalInput({
   onChange,
   onAsk,
   disabled = false,
-  freeQuestionsLeft,
 }) {
   const [error, setError] = useState(null);
   const lastSubmitRef = useRef(0);

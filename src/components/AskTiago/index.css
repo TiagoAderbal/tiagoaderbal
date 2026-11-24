@@ -698,7 +698,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 1200;
   animation: fadeIn 0.2s ease;
 }
 
@@ -815,54 +815,6 @@
 
 .markdown-output.blurred {
   user-select: none;
-}
-
-.free-questions-counter {
-  color: #9ca3af;
-  font-size: 11px;
-  font-family: "JetBrains Mono", monospace;
-  letter-spacing: 0.3px;
-  margin: 0;
-  opacity: 0.85;
-}
-
-.free-questions-counter.depleted {
-  color: #d7af43;
-  opacity: 1;
-}
-
-.markdown-output.paywall-blurred {
-  max-height: 90px;
-  overflow: hidden;
-  filter: blur(5px);
-  user-select: none;
-  margin-bottom: 16px;
-}
-
-.markdown-output.paywall-blurred {
-  max-height: 90px;
-  overflow: hidden;
-  filter: blur(5px);
-  user-select: none;
-  margin-bottom: 16px;
-}
-
-.markdown-output.paywall-blurred.infected {
-  animation: markdown-glitch-blurred 0.15s infinite steps(2);
-}
-
-@keyframes markdown-glitch-blurred {
-
-  0%,
-  100% {
-    transform: translate(0, 0);
-    filter: blur(5px) hue-rotate(0deg) saturate(1);
-  }
-
-  50% {
-    transform: translate(1px, -1px);
-    filter: blur(5px) hue-rotate(15deg) saturate(1.8);
-  }
 }
 
 @keyframes alert-appear {

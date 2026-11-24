@@ -15,7 +15,7 @@ export default function Article() {
         <div className="article-meta"><span>{article.category}</span><time dateTime={article.date}>{article.dateLabel}</time></div>
         <h1>{article.title}</h1>
         <p>{article.summary}</p>
-        <span className="article-read">{article.readTime} de leitura</span>
+        <span className="article-read">{article.readTime} min de leitura</span>
       </header>
       {article.cover && <img className="article-hero-image" src={article.cover} alt="" />}
       <article className="markdown-article"><ReactMarkdown>{article.content}</ReactMarkdown></article>

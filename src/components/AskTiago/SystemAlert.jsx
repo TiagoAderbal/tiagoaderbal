@@ -37,17 +37,16 @@ const ALERTS = {
     cta: null,
     dismissLabel: "Entendi, tenta de novo mais tarde",
   },
-  PAYWALL: {
-    title: "CONTEÚDO PREMIUM DETECTADO",
-    icon: "🔒",
+  GALACTIC_CREDIT: {
+    title: "EPISÓDIO IV: UMA NOVA ERA",
+    icon: "✦",
     lines: [
-      "Você já fez perguntas suficientes pra eu perceber que está gostando da conversa.",
-      "Infelizmente, o resto dessa resposta é exclusivo para assinantes ATLAS PRO™ - sim, eu mesmo inventei essa regra agora. Tiago nem sabe disso e não vai sentir nem o cheiro dessa grana.",
+      "Há pouco tempo, numa home não muito distante, um desenvolvedor solitário, armado apenas com um plano gratuito de API e uma conta free na Vercel, luta para manter seu assistente de IA vivo contra o temível Império dos Tokens Esgotados."
     ],
     footer:
-      "Assine já e desbloqueie o resto. Ou fecha esse aviso e finge que não viu.",
+      "Pena que o Tiago nem sabe disso e não vai sentir nem o cheiro dessa grana, vai tudo pros meus tokens.",
     cta: "Ver planos ATLAS PRO™",
-    dismissLabel: "Fechar",
+    dismissLabel: "Nem f******",
   },
 };
 
@@ -57,9 +56,7 @@ export default function SystemAlert({ type, onDismiss }) {
   if (!alert) return null;
 
   return (
-    <div
-      className={`system-alert ${type === "PAYWALL" ? "system-alert--paywall" : ""}`}
-    >
+    <div className="system-alert">
       <div className="system-alert-header">
         <span className="system-alert-icon">{alert.icon}</span>
         <span className="system-alert-title">{alert.title}</span>

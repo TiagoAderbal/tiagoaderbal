@@ -10,8 +10,6 @@ const DEMO_COMMANDS = {
   "!timeout": "TIMEOUT",
 };
 
-const PAYWALL_AT_QUESTION = 3;
-
 export default function AskTiago() {
   const [opened, setOpened] = useState(true);
   const [terminalState, setTerminalState] = useState(TERMINAL.IDLE);
@@ -19,18 +17,11 @@ export default function AskTiago() {
   const [answer, setAnswer] = useState("");
   const [errorType, setErrorType] = useState(null);
   const [initialized, setInitialized] = useState(false);
-  const [questionCount, setQuestionCount] = useState(0);
-  const [paywallDismissed, setPaywallDismissed] = useState(false);
-
-  const freeQuestionsLeft = Math.max(0, PAYWALL_AT_QUESTION - questionCount);
-  const showPaywall = questionCount === PAYWALL_AT_QUESTION;
-  const isPaywalled = showPaywall && !paywallDismissed && terminalState !== TERMINAL.TYPING;
 
   async function handleAsk() {
     if (!question.trim()) return;
     setAnswer("");
     setErrorType(null);
-    setPaywallDismissed(false); // nova pergunta reseta o "fechei o aviso"
 
     const demoType = DEMO_COMMANDS[question.trim().toLowerCase()];
     if (demoType) {
@@ -39,8 +30,6 @@ export default function AskTiago() {
       setTerminalState(TERMINAL.ERROR);
       return;
     }
-
-    setQuestionCount((count) => count + 1);
 
     if (!initialized) {
       setTerminalState(TERMINAL.BOOT);
@@ -76,9 +65,6 @@ export default function AskTiago() {
       question={question}
       answer={answer}
       errorType={errorType}
-      isPaywalled={isPaywalled}
-      onDismissPaywall={() => setPaywallDismissed(true)}
-      freeQuestionsLeft={freeQuestionsLeft}
       setQuestion={setQuestion}
       onOpen={() => setOpened(true)}
       onAsk={handleAsk}

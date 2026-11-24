@@ -34,7 +34,7 @@ export default function Blog() {
                   <div className="article-meta"><span>{article.category}</span><time dateTime={article.date}>{article.dateLabel}</time></div>
                   <h2>{article.title}</h2>
                   <p>{article.summary}</p>
-                  <span className="article-read">{article.readTime} de leitura <span aria-hidden="true">↗</span></span>
+                  <span className="article-read">{article.readTime} min de leitura <span aria-hidden="true">↗</span></span>
                 </div>
               </Link>
             </article>
