@@ -2,6 +2,7 @@ import { TERMINAL } from "./terminalStates";
 
 export default function StatusBar({ terminalState, infected = false }) {
   const isProcessing =
+    terminalState === TERMINAL.BOOT ||
     terminalState === TERMINAL.ASKING ||
     terminalState === TERMINAL.ANALYZING ||
     terminalState === TERMINAL.TYPING;
@@ -11,6 +12,12 @@ export default function StatusBar({ terminalState, infected = false }) {
     : isProcessing
       ? "PROCESSANDO"
       : "ONLINE";
+
+  const statusClass = infected
+    ? "is-compromised"
+    : isProcessing
+      ? "is-busy"
+      : "is-online";
 
   return (
     <div className="status-bar">
@@ -22,7 +29,7 @@ export default function StatusBar({ terminalState, infected = false }) {
           A.T.L.A.S.
         </h2>
 
-        <span className={infected ? "compromised" : ""}>{statusText}</span>
+        <span className={`status-pill ${statusClass}`}>{statusText}</span>
       </div>
 
       <div>

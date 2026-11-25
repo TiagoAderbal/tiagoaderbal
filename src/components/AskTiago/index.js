@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TERMINAL } from "./terminalStates";
 import "./index.css";
 import ArcTerminal from "./ArcTerminal";
@@ -17,6 +17,7 @@ export default function AskTiago() {
   const [answer, setAnswer] = useState("");
   const [errorType, setErrorType] = useState(null);
   const [initialized, setInitialized] = useState(false);
+  const requestRef = useRef(null);
 
   async function handleAsk() {
     if (!question.trim()) return;
@@ -31,6 +32,9 @@ export default function AskTiago() {
       return;
     }
 
+    // A requisição começa junto com a animação do log, não depois dela.
+    requestRef.current = askToTiago(question);
+
     if (!initialized) {
       setTerminalState(TERMINAL.BOOT);
     } else {
@@ -41,8 +45,12 @@ export default function AskTiago() {
   useEffect(() => {
     if (terminalState !== TERMINAL.ASKING) return;
 
+    let cancelled = false;
+
     async function ask() {
-      const result = await askToTiago(question);
+      const result = await (requestRef.current ?? askToTiago(question));
+      if (cancelled) return;
+      requestRef.current = null;
 
       if (result.type === "OK") {
         setAnswer(result.answer);
@@ -56,6 +64,9 @@ export default function AskTiago() {
     }
 
     ask();
+    return () => {
+      cancelled = true;
+    };
   }, [terminalState, question]);
 
   return (

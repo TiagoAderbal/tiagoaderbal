@@ -121,11 +121,16 @@
 .intrusion-tag { position: absolute; z-index: 3; top: -12px; right: 28px; padding: 7px 12px; background: #ff3150; color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; transform: rotate(1.5deg); box-shadow: 3px 3px 0 #171914; }
 .intrusion-tag span { color: #e0ff8d; }
 .infection-zone .terminal-frame { z-index: 1; margin: 0 auto; }
-.infection-zone .jarvis-terminal { border-color: #ff3150; box-shadow: 0 0 0 2px rgba(255, 49, 80, 0.12), 0 12px 44px rgba(27, 31, 18, 0.2); }
-.infection-zone .jarvis-terminal::before { background: repeating-linear-gradient(to bottom, rgba(168, 226, 43, 0.04) 0 1px, transparent 1px 4px); }
-.infection-zone .status-bar h2 { color: #c4e85a; }
-.infection-zone .reactor-segments { stroke: #ff3150; }
-.infection-zone .reactor-ring { stroke: #b5dd47; }
+
+/* surto do ATLAS (classe aplicada pelo terminal na seção): a página também glitcha */
+.atlas-surge .infection-title::before,
+.atlas-surge .infection-title::after { animation-duration: 0.35s; }
+.atlas-surge .infection-copy { text-shadow: -1px 0 rgba(255, 49, 80, 0.55), 1px 0 rgba(61, 189, 255, 0.45); }
+.atlas-surge .infection-led { background: #c4e85a; box-shadow: 0 0 12px #c4e85a; }
+.atlas-surge .infection-status { animation: status-jitter 0.18s steps(2, end) infinite; }
+.atlas-surge .intrusion-tag { animation: status-jitter 0.22s steps(2, end) infinite reverse; }
+.infection-zone.atlas-surge::before { opacity: 1; }
+@keyframes status-jitter { 50% { transform: translate(2px, -1px); } }
 
 @keyframes infection-pulse { 50% { opacity: 0.3; box-shadow: 0 0 3px #ff3150; } }
 @keyframes infection-glitch {
@@ -181,5 +186,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .infection-led, .infection-title::before, .infection-title::after,
+  .atlas-surge .infection-status, .atlas-surge .intrusion-tag,
   .home-hero-copy .react-typewriter-pointer { animation: none; }
 }

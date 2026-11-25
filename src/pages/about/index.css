@@ -11,6 +11,10 @@
 
 .about-career.is-breached { border-color: rgba(255, 49, 80, 0.35); animation: about-shake 450ms steps(3, end); }
 
+/* antes da invasão a seção é "normal": sem as marcas decorativas da infection-zone */
+.about-career.infection-zone:not(.is-breached)::before,
+.about-career.infection-zone:not(.is-breached)::after { content: none; }
+
 .about-heading { max-width: 900px; margin-bottom: 28px; }
 .about-heading h2 {
   margin: 12px 0 0;

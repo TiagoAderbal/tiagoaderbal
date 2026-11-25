@@ -1,5 +1,4 @@
-import ReactMarkdown from "react-markdown";
-import TypeWriter from "./TypeWriter";
+import StreamingAnswer from "./StreamingAnswer";
 import SystemAlert from "./SystemAlert";
 import { TERMINAL } from "./terminalStates";
 
@@ -21,39 +20,21 @@ export default function TerminalOutput({
     );
   }
 
-  // Feedback visual enquanto aguarda a resposta da API
-  if (
-    (terminalState === TERMINAL.ASKING ||
-      terminalState === TERMINAL.ANALYZING) &&
-    !answer
-  ) {
-    return (
-      <div className="terminal-output">
-        <span className="thinking-dots">
-          <span>.</span>
-          <span>.</span>
-          <span>.</span>
-        </span>
-      </div>
-    );
-  }
-
+  // Enquanto processa, quem dá o feedback visual é o ProcessLog.
   if (!answer) return null;
 
   return (
     <div className="terminal-output">
-      {terminalState === TERMINAL.TYPING ? (
-        <TypeWriter
-          text={answer}
-          speed={18}
-          infected={infected}
-          onFinish={() => setTerminalState(TERMINAL.IDLE)}
-        />
-      ) : (
-        <div className={`markdown-output ${infected ? "infected" : ""}`}>
-          <ReactMarkdown>{answer}</ReactMarkdown>
-        </div>
-      )}
+      <div className="answer-label">
+        atlas <span>{"//"} resposta</span>
+      </div>
+
+      <StreamingAnswer
+        text={answer}
+        streaming={terminalState === TERMINAL.TYPING}
+        infected={infected}
+        onFinish={() => setTerminalState(TERMINAL.IDLE)}
+      />
     </div>
   );
 }
