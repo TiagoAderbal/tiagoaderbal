@@ -1,54 +1,44 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CreditPaywall from "./CreditPaywall";
+import { useCoinCycle } from "./useCoinCycle";
 import "./index.css";
 
-const DROP_COUNT = 15;
-const FIRST_DROP_DELAY_MS = 1200;
-const VISIBLE_MS = 3000;
-const HIDDEN_MS = 8000;
-
-let completedDrops = 0;
-
-export default function CoinDrop({ active, suppressed = false }) {
-  const [dropped, setDropped] = useState(false);
+/**
+ * Moedinha do ATLAS PRO™.
+ * - padrão: cai embaixo do botão de tema, na navbar.
+ * - `inline`: ocupa o lugar de `children` (ex.: o ponto verde de um título) enquanto está visível.
+ */
+export default function CoinDrop({ active, suppressed = false, inline = false, children }) {
+  const dropped = useCoinCycle(active, inline ? "inline" : "nav");
   const [paywallOpen, setPaywallOpen] = useState(false);
-
-  useEffect(() => {
-    if (!active || completedDrops >= DROP_COUNT) return undefined;
-
-    let timer;
-    const drop = () => {
-      setDropped(true);
-      timer = setTimeout(() => {
-        setDropped(false);
-        completedDrops += 1;
-        if (completedDrops < DROP_COUNT) timer = setTimeout(drop, HIDDEN_MS);
-      }, VISIBLE_MS);
-    };
-
-    timer = setTimeout(drop, FIRST_DROP_DELAY_MS);
-    return () => {
-      clearTimeout(timer);
-      setDropped(false);
-    };
-  }, [active]);
 
   const visible = dropped && !suppressed;
 
+  const coin = (
+    <button
+      className={`coin-drop ${inline ? "coin-drop--inline" : ""} ${visible ? "is-visible" : ""}`}
+      type="button"
+      onClick={() => setPaywallOpen(true)}
+      aria-label="Moedinha ATLAS PRO™"
+      aria-hidden={!visible}
+      tabIndex={visible ? 0 : -1}
+    >
+      <span className="coin">
+        <span className="coin-face">$</span>
+      </span>
+    </button>
+  );
+
   return (
     <>
-      <button
-        className={`coin-drop ${visible ? "is-visible" : ""}`}
-        type="button"
-        onClick={() => setPaywallOpen(true)}
-        aria-label="Moedinha ATLAS PRO™"
-        aria-hidden={!visible}
-        tabIndex={visible ? 0 : -1}
-      >
-        <span className="coin">
-          <span className="coin-face">$</span>
+      {inline ? (
+        <span className={`coin-slot ${visible ? "has-coin" : ""}`}>
+          <span className="coin-slot-mark">{children}</span>
+          {coin}
         </span>
-      </button>
+      ) : (
+        coin
+      )}
       {paywallOpen && <CreditPaywall onClose={() => setPaywallOpen(false)} />}
     </>
   );

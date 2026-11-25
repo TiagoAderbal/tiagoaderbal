@@ -69,6 +69,15 @@
   animation: surge-tilt 0.22s steps(2, end) infinite;
 }
 
+/* com texto na tela, nada se move: o surto vira só um flicker de cor */
+.terminal-frame.has-text {
+  animation: none;
+}
+
+.terminal-frame.has-text.is-surging {
+  animation: surge-color 0.22s steps(2, end) infinite;
+}
+
 .jarvis-terminal {
   width: 100%;
   margin: 0;
@@ -743,12 +752,10 @@
 
   0%,
   100% {
-    transform: translate(0, 0);
     filter: hue-rotate(0deg) saturate(1);
   }
 
   50% {
-    transform: translate(1px, -1px);
     filter: hue-rotate(15deg) saturate(1.8);
   }
 }
@@ -1310,6 +1317,22 @@
 
   100% {
     stroke-dashoffset: -1;
+  }
+}
+
+@keyframes surge-color {
+
+  0%,
+  100% {
+    filter: hue-rotate(0deg) saturate(1);
+  }
+
+  33% {
+    filter: hue-rotate(-12deg) saturate(1.6) brightness(1.08);
+  }
+
+  66% {
+    filter: hue-rotate(10deg) saturate(1.3);
   }
 }
 

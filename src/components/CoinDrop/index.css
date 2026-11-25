@@ -39,6 +39,36 @@
 
 .is-visible .coin-face { animation: coin-flip 1.6s ease-in-out infinite; }
 
+/* variante inline: a moeda toma o lugar do ponto verde de um título */
+.coin-slot { position: relative; display: inline-block; }
+.coin-slot-mark { display: inline-block; transition: opacity 200ms ease, transform 200ms ease; }
+.coin-slot.has-coin .coin-slot-mark { opacity: 0; transform: scale(0.4); }
+
+.coin-drop--inline {
+  top: auto;
+  bottom: 0.13em;
+  /* compensa o letter-spacing negativo dos títulos, que desloca a caixa do ponto */
+  left: calc(50% + 0.045em);
+  font-size: inherit;
+  line-height: 1;
+}
+
+.coin-drop--inline .coin {
+  width: 0.26em;
+  height: 0.26em;
+  border-width: 0.012em;
+  transform: translateY(-0.9em) scale(0.6);
+}
+
+.coin-drop--inline.is-visible .coin { transform: none; }
+.coin-drop--inline.is-visible:hover .coin { transform: translateY(-0.03em); }
+
+.coin-drop--inline .coin-face {
+  color: #6b4a0b;
+  font-size: 0.15em;
+  letter-spacing: 0;
+}
+
 @keyframes coin-flip {
   0%, 60%, 100% { transform: scaleX(1); }
   80% { transform: scaleX(0.15); }
@@ -100,6 +130,7 @@
 .system-alert--galactic .system-alert-icon { animation: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .coin { transition: opacity 200ms ease; transform: none; }
+  .coin,
+  .coin-drop--inline .coin { transition: opacity 200ms ease; transform: none; }
   .is-visible .coin-face { animation: none; }
 }

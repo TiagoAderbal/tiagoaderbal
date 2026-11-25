@@ -1,3 +1,4 @@
+import CoinDrop from "../../components/CoinDrop";
 import "./index.css";
 
 const contactOptions = [
@@ -36,7 +37,7 @@ export default function Contact() {
     <main className="content-page contact-page">
       <header className="page-intro contact-intro">
         <span className="eyebrow">VAMOS TIRAR UMA IDEIA DO PAPEL?</span>
-        <h1>Contato<span>.</span></h1>
+        <h1>Contato<CoinDrop active inline><span>.</span></CoinDrop></h1>
         <p>Tem um projeto, uma oportunidade ou só quer trocar uma ideia? Escolha um canal e me chama.</p>
       </header>
 

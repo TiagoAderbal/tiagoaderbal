@@ -22,7 +22,10 @@ export default function ArcTerminal(props) {
   }, [infected]);
 
   return (
-    <div ref={frameRef} className={`terminal-frame ${infected ? "is-surging" : ""}`}>
+    <div
+      ref={frameRef}
+      className={`terminal-frame ${infected ? "is-surging" : ""} ${props.opened ? "has-text" : ""}`}
+    >
       <CircuitInfection />
       <InfectionBorder />
 
