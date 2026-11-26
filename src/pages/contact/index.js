@@ -1,5 +1,6 @@
 import CoinDrop from "../../components/CoinDrop";
 import "./index.css";
+import SiteFooter from "../../components/SiteFooter";
 
 const contactOptions = [
   {
@@ -59,7 +60,7 @@ export default function Contact() {
           </a>
         ))}
       </section>
-      <footer className="site-footer">© {new Date().getFullYear()} Tiago Aderbal</footer>
+      <SiteFooter />
     </main>
   );
 }

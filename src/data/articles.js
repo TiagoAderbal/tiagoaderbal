@@ -1,7 +1,8 @@
 const articles = [
   {
     slug: "ia-engenharia-software-engenharia-reversa",
-    cover: "/assets/imgs/blog/ia-engenharia-reversa.png",
+    cover: "/assets/imgs/blog/ia-engenharia-reversa.webp",
+    coverThumb: "/assets/imgs/blog/ia-engenharia-reversa-thumb.webp",
     title: "A mudança da IA na engenharia de software e seus impactos na engenharia reversa",
     summary: "Como a IA reduz o esforço para compreender sistemas, muda a análise de vulnerabilidades e reforça a responsabilidade de quem desenvolve.",
     date: "2026-11-23",
@@ -67,7 +68,7 @@ E encerro este artigo com uma provocação: você pode delegar tarefas para uma 
   },
   {
     slug: "seguranca-assistentes-ia-prompt-injection",
-    cover: "/assets/imgs/blog/seguranca-llm.png",
+    cover: "/assets/imgs/blog/seguranca-llm.webp",
     title: "Segurança em Assistentes de IA: Como Protegi um LLM Contra Prompt Injection na Prática",
     summary: "As camadas de defesa que implementei no ATLAS contra prompt injection, extração de contexto e vazamento de informações.",
     date: "2026-07-20",
@@ -121,7 +122,8 @@ Este artigo é baseado na experiência real de construção do ATLAS, o assisten
   },
   {
     slug: "desenvolvimento-codigo-seguro",
-    cover: "/assets/imgs/blog/codigo-seguro.png",
+    cover: "/assets/imgs/blog/codigo-seguro.webp",
+    coverThumb: "/assets/imgs/blog/codigo-seguro-thumb.webp",
     title: "Desenvolvimento de Código Seguro: A Segurança é de todos!",
     summary: "Boas práticas de segurança no frontend, backend e dependências, e por que segurança precisa fazer parte da cultura de desenvolvimento.",
     date: "2026-06-15",
@@ -220,7 +222,8 @@ Segurança não é uma funcionalidade adicional. É um requisito de qualidade.`,
   },
   {
     slug: "fator-humano-seguranca-cibernetica",
-    cover: "/assets/imgs/blog/fator-humano.png",
+    cover: "/assets/imgs/blog/fator-humano.webp",
+    coverThumb: "/assets/imgs/blog/fator-humano-thumb.webp",
     title: "O fator humano: a vulnerabilidade mais explorada na segurança cibernética",
     summary: "Como phishing e engenharia social exploram a confiança, e por que investir em pessoas também é uma estratégia de segurança.",
     date: "2026-02-17",

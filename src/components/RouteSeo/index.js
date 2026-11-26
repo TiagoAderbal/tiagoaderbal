@@ -39,6 +39,13 @@ const PAGE_SEO = {
   },
 };
 
+const NOT_FOUND_SEO = {
+  title: "404 | Página não encontrada | Tiago Aderbal",
+  description: "Essa página não existe. Mas tem alguém esperando por você nela.",
+  type: "website",
+  noindex: true,
+};
+
 function normalizePath(pathname) {
   if (pathname === "/") return pathname;
   return pathname.replace(/\/+$/, "");
@@ -52,7 +59,7 @@ function resolveSeo(path) {
       return { title: `${article.title} | Tiago Aderbal`, description: article.summary, type: "article" };
     }
   }
-  return PAGE_SEO[path] ?? DEFAULT_SEO;
+  return PAGE_SEO[path] ?? NOT_FOUND_SEO;
 }
 
 function setMetaContent(selector, content) {
@@ -65,7 +72,7 @@ export default function RouteSeo() {
 
   useEffect(() => {
     const path = normalizePath(pathname);
-    const { title, description, type } = resolveSeo(path);
+    const { title, description, type, noindex = false } = resolveSeo(path);
     const url = path === "/" ? `${SITE_URL}/` : `${SITE_URL}${path}`;
 
     document.title = title;
@@ -79,6 +86,13 @@ export default function RouteSeo() {
 
     const canonical = document.head.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute("href", url);
+
+    // A 404 não deve ser indexada; ao sair dela, o robots volta ao valor original.
+    const robots = document.head.querySelector('meta[name="robots"]');
+    if (robots) {
+      if (!robots.dataset.original) robots.dataset.original = robots.getAttribute("content") || "index, follow";
+      robots.setAttribute("content", noindex ? "noindex, follow" : robots.dataset.original);
+    }
   }, [pathname]);
 
   return null;

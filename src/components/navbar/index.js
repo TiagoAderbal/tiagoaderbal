@@ -7,7 +7,7 @@ const CREST_VISIBLE_MS = 2000;
 const CREST_HIDDEN_MS = 10000;
 
 function ThemeIcon({ theme }) {
-  const image = theme === "light" ? "/assets/imgs/darth-vader.png" : "/assets/imgs/yoda.png";
+  const image = theme === "light" ? "/assets/imgs/darth-vader.webp" : "/assets/imgs/yoda.webp";
   const className = theme === "light" ? "theme-character-icon vader-icon" : "theme-character-icon yoda-icon";
 
   return <img className={className} src={image} alt="" aria-hidden="true" />;
@@ -76,7 +76,7 @@ export default function Navbar({ theme = "light", onToggleTheme = () => {} }) {
             >
               <ThemeIcon theme={theme} />
               <span className={`theme-crest ${showCrest ? "is-shown" : ""}`} aria-hidden="true">
-                <img src="/assets/imgs/stacks/palmeiras.png" alt="" />
+                <img src="/assets/imgs/stacks/palmeiras.webp" alt="" />
               </span>
               <span className="theme-tooltip" aria-hidden="true">{theme === "light" ? "Dark side" : "Light side"}</span>
             </button>

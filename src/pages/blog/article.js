@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import articles from "../../data/articles";
 import "./index.css";
+import SiteFooter from "../../components/SiteFooter";
 
 export default function Article() {
   const { slug } = useParams();
@@ -17,10 +18,10 @@ export default function Article() {
         <p>{article.summary}</p>
         <span className="article-read">{article.readTime} min de leitura</span>
       </header>
-      {article.cover && <img className="article-hero-image" src={article.cover} alt="" />}
+      {article.cover && <img className="article-hero-image" src={article.cover} alt="" width="1280" height="720" decoding="async" />}
       <article className="markdown-article"><ReactMarkdown>{article.content}</ReactMarkdown></article>
       {article.linkedinUrl && <a className="linkedin-original" href={article.linkedinUrl} target="_blank" rel="noreferrer">Ver publicação original no LinkedIn <span aria-hidden="true">↗</span></a>}
-      <footer className="site-footer">© {new Date().getFullYear()} Tiago Aderbal</footer>
+      <SiteFooter />
     </main>
   );
 }

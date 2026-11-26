@@ -5,7 +5,7 @@
         "stack": ["Python", "Django", "React", "Next.js", "TypeScript"],
         "url": "https://residencialdclarice.com.br/",
         "github": "",
-        "image": "/assets/imgs/residencial.png",
+        "image": "/assets/imgs/residencial.webp",
         "description": "Sistema de gestão para clínica geriátrica, com módulos financeiro e operacional: sinais vitais em tempo real, estoque e prescrição de medicações, entre outros."
     },
     {
@@ -14,7 +14,7 @@
         "stack": ["Vue.js"],
         "url": "https://balancopadrao.com.br",
         "github": "",
-        "image": "/assets/imgs/bp1.png",
+        "image": "/assets/imgs/bp1.webp",
         "description": "Plataforma de análise de dados em que os usuários lançam seus dados num plano de contas padrão e a ferramenta gera indicadores e relatórios financeiros."
     },
     {
@@ -23,7 +23,7 @@
         "stack": ["HTML", "CSS", "JavaScript"],
         "url": "",
         "github": "https://github.com/TiagoAderbal/login_manut_bi",
-        "image": "/assets/imgs/login_bi.png",
+        "image": "/assets/imgs/login_bi.webp",
         "description": "Tela de login simples, desenvolvida para um projeto de trabalho voluntário."
     },
     {
@@ -32,7 +32,7 @@
         "stack": ["React"],
         "url": "https://numbers-kappa.vercel.app/",
         "github": "https://github.com/TiagoAderbal/numbers",
-        "image": "/assets/imgs/numb1.png",
+        "image": "/assets/imgs/numb1.webp",
         "description": "Site institucional criado para um cliente que presta serviços de análise de dados."
     },
     {
@@ -41,7 +41,7 @@
         "stack": ["HTML", "CSS", "JavaScript", "Figma"],
         "url": "",
         "github": "https://github.com/TiagoAderbal/telas_cardanexi",
-        "image": "/assets/imgs/carda1.png",
+        "image": "/assets/imgs/carda1.webp",
         "description": "Site criado para fixação de conteúdo, do design no Figma à implementação."
     },
     {
@@ -50,7 +50,7 @@
         "stack": ["HTML", "CSS", "JavaScript", "PHP", "SQLite"],
         "url": "https://tiagoaderbal.github.io/projeto-integrador/index.html",
         "github": "https://github.com/TiagoAderbal/projeto-integrador",
-        "image": "/assets/imgs/pi1.png",
+        "image": "/assets/imgs/pi1.webp",
         "description": "Projeto integrador da faculdade, com front-end em HTML, CSS e JS e back-end em PHP."
     },
     {
@@ -59,7 +59,7 @@
         "stack": ["Python", "Streamlit", "Pandas", "Plotly"],
         "url": "https://aula-python-asimov.streamlit.app/",
         "github": "https://github.com/TiagoAderbal/aula-python-asimov",
-        "image": "/assets/imgs/data_analysis1.png",
+        "image": "/assets/imgs/data_analysis1.webp",
         "description": "Lê um dicionário com informações sobre diversos livros e compila esses dados em indicadores."
     },
     {
@@ -68,7 +68,7 @@
         "stack": ["Python", "Streamlit", "Pandas", "Plotly"],
         "url": "https://indic-python-contabil.streamlit.app/",
         "github": "https://github.com/TiagoAderbal/indic-python",
-        "image": "/assets/imgs/indic1.png",
+        "image": "/assets/imgs/indic1.webp",
         "description": "Lê uma planilha Excel com informações de uma instituição e gera seus indicadores financeiros."
     }
 ]

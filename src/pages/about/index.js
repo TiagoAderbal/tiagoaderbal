@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import AskTiago from "../../components/AskTiago";
 import "./index.css";
+import SiteFooter from "../../components/SiteFooter";
 
 const CAREER = [
   "Sou desenvolvedor Full Stack, com foco no ecossistema JavaScript e TypeScript. Gosto de construir soluções completas, do banco de dados à interface, que sejam escaláveis, fáceis de manter e que resolvam problemas reais.",
@@ -126,7 +127,7 @@ export default function About() {
           </div>
         </section>
 
-        <footer className="site-footer">© {new Date().getFullYear()} Tiago Aderbal</footer>
+        <SiteFooter />
       </main>
     </motion.div>
   );

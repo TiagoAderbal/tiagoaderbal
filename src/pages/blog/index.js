@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import articles from "../../data/articles";
 import "./index.css";
+import SiteFooter from "../../components/SiteFooter";
 
 export default function Blog() {
   const [category, setCategory] = useState("Todas");
@@ -26,10 +27,23 @@ export default function Blog() {
 
       {visibleArticles.length ? (
         <section className="article-grid" aria-label="Artigos">
-          {visibleArticles.map((article) => (
+          {visibleArticles.map((article, index) => (
             <article className="article-card" key={article.slug}>
               <Link className="article-card-link" to={`/blog/${article.slug}`}>
-                {article.cover ? <img className="article-cover" src={article.cover} alt="" /> : <div className="article-cover article-cover-placeholder"><span>{article.category}</span></div>}
+                {article.cover ? (
+                  <img
+                    className="article-cover"
+                    src={article.coverThumb ?? article.cover}
+                    alt=""
+                    width="880"
+                    height="495"
+                    // a primeira linha de cards já aparece na tela; o resto carrega ao rolar
+                    loading={index < 3 ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                ) : (
+                  <div className="article-cover article-cover-placeholder"><span>{article.category}</span></div>
+                )}
                 <div className="article-card-content">
                   <div className="article-meta"><span>{article.category}</span><time dateTime={article.date}>{article.dateLabel}</time></div>
                   <h2>{article.title}</h2>
@@ -48,7 +62,7 @@ export default function Blog() {
           {!articles.length && <a className="text-link" href="https://www.linkedin.com/in/tiago-aderbal" target="_blank" rel="noreferrer">Abrir meu LinkedIn <span aria-hidden="true">↗</span></a>}
         </section>
       )}
-      <footer className="site-footer">© {new Date().getFullYear()} Tiago Aderbal</footer>
+      <SiteFooter />
     </main>
   );
 }

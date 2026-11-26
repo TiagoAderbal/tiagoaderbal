@@ -39,7 +39,7 @@ const ALERTS = {
   },
   GALACTIC_CREDIT: {
     variant: "galactic",
-    image: { src: "/assets/imgs/darth-vader-hand.png", alt: "Darth Vader estendendo a mão" },
+    image: { src: "/assets/imgs/darth-vader-hand.webp", alt: "Darth Vader estendendo a mão" },
     title: "EPISÓDIO IV: UMA NOVA ERA",
     icon: "✦",
     lines: [
@@ -50,6 +50,19 @@ const ALERTS = {
     note: "* O Tiago nem vai ver a cor dessa grana, vai tudo pros meus tokens.",
     cta: "Apoiar a Rebelião ✦",
     dismissLabel: "Nem f******",
+  },
+  MANDALORIAN: {
+    variant: "beskar",
+    image: { src: "/assets/imgs/stacks/mandalor.webp", alt: "Pequeno alienígena verde de orelhas grandes" },
+    title: "CREDO RECONHECIDO",
+    icon: "◈",
+    lines: [
+      "Senha aceita. Eu esperava uma pergunta sobre o currículo do Tiago, mas pelo visto temos um caçador de recompensas na home.",
+      "O credo daqui é parecido: nunca tirar o capacete em produção, nunca dar push --force na main e sempre levar o pequenino junto. Ele não fala nada, mas aprova todos os PRs.",
+    ],
+    footer: "Recompensa entregue: você achou um easter egg. Pagamento em beskar não é aceito, só em café.",
+    cta: null,
+    dismissLabel: "Como deve ser",
   },
 };
 

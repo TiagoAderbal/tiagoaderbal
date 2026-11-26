@@ -3,6 +3,10 @@ import "./index.css";
 import { motion } from "framer-motion";
 import AskTiago from "../../components/AskTiago";
 import { useEffect, useRef, useState } from "react";
+import SiteFooter from "../../components/SiteFooter";
+import { triggerSideEye } from "../../components/EasterEggs/SideEye";
+
+const SIDE_EYE_HOVER_MS = 1500;
 
 function shuffledIndexes(length) {
   const indexes = Array.from({ length }, (_, index) => index);
@@ -18,6 +22,7 @@ function TiagoUtilities() {
   const [randomIndex, setRandomIndex] = useState(0);
   const [popoverAnchor, setPopoverAnchor] = useState({ top: 0, left: 0 });
   const dockRef = useRef(null);
+  const sideEyeTimerRef = useRef(null);
   const factBagRef = useRef([]);
   const lastFactRef = useRef(null);
   const randomFacts = [
@@ -73,8 +78,19 @@ function TiagoUtilities() {
     return () => {
       document.removeEventListener("pointerdown", closeOnOutsideClick);
       document.removeEventListener("keydown", closeOnEscape);
+      clearTimeout(sideEyeTimerRef.current);
     };
   }, []);
+
+  // Ficar encarando o "Na minha máquina funciona" chama o macaco desconfiado.
+  const startSideEye = () => {
+    clearTimeout(sideEyeTimerRef.current);
+    sideEyeTimerRef.current = setTimeout(
+      () => triggerSideEye("Na sua máquina funciona, né? Sei..."),
+      SIDE_EYE_HOVER_MS,
+    );
+  };
+  const stopSideEye = () => clearTimeout(sideEyeTimerRef.current);
 
   const activateTool = (tool, event) => {
     const buttonRect = event.currentTarget.getBoundingClientRect();
@@ -100,7 +116,7 @@ function TiagoUtilities() {
   return (
     <aside ref={dockRef} className="tiago-dock" style={{ "--popover-top": `${popoverAnchor.top}px`, "--popover-left": `${popoverAnchor.left}px` }} aria-label="Barra de utilitários">
       <div className="dock-icons">
-        <button type="button" className={`dock-button ${activeTool === "coffee" ? "is-active" : ""}`} aria-label="Nível de café" aria-pressed={activeTool === "coffee"} onClick={(event) => activateTool("coffee", event)}><img className="dock-coffee-icon" src="/assets/imgs/stacks/coffee.png" alt="" aria-hidden="true" /></button>
+        <button type="button" className={`dock-button ${activeTool === "coffee" ? "is-active" : ""}`} aria-label="Nível de café" aria-pressed={activeTool === "coffee"} onClick={(event) => activateTool("coffee", event)}><img className="dock-coffee-icon" src="/assets/imgs/stacks/coffee.webp" alt="" aria-hidden="true" /></button>
         <button type="button" className={`dock-button ${activeTool === "build" ? "is-active" : ""}`} aria-label="Status do build" aria-pressed={activeTool === "build"} onClick={(event) => activateTool("build", event)}><span className="dock-glyph build-glyph">✓</span></button>
         <button type="button" className={`dock-button ${activeTool === "bugs" ? "is-active" : ""}`} aria-label="Bugs conhecidos" aria-pressed={activeTool === "bugs"} onClick={(event) => activateTool("bugs", event)}><svg className="dock-svg bug-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 10a4 4 0 0 1 8 0v4a4 4 0 0 1-8 0z" /><path d="M12 10v8M9.5 6.5 8 4.5M14.5 6.5 16 4.5M8 12H4.5M19.5 12H16M8 16l-3 2M16 16l3 2M8 9 5 7.5M16 9l3-1.5" /></svg></button>
         <button type="button" className={`dock-button ${activeTool === "deploy" ? "is-active" : ""}`} aria-label="Último deploy" aria-pressed={activeTool === "deploy"} onClick={(event) => activateTool("deploy", event)}><svg className="dock-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 15 6.5 12.5C8 8.5 11.5 4 18.5 3.5 18 10.5 13.5 14 9.5 15.5z" /><path d="M6.5 12.5H4L6 9.5h4M11.5 17.5V20l3-2v-4" /><path d="M5.5 16c-1.4 1.4-2 4.5-2 4.5s3.1-.6 4.5-2" /><circle cx="14.5" cy="8.5" r="1.4" /></svg></button>
@@ -109,8 +125,8 @@ function TiagoUtilities() {
       </div>
       {activeTool && (
         <div className="dock-popover" role="status" aria-live="polite">
-          {activeTool === "coffee" && <><span className="popover-kicker">SISTEMA DE SUPORTE</span><strong className="coffee-readout"><img className="coffee-popover-icon" src="/assets/imgs/stacks/coffee.png" alt="" aria-hidden="true" /> Café: 87%</strong><p>Operacional por mais uma reunião e meia.</p></>}
-          {activeTool === "build" && <><span className="popover-kicker">STATUS DO BUILD</span><strong><span className="build-led" /> Na minha máquina funciona</strong></>}
+          {activeTool === "coffee" && <><span className="popover-kicker">SISTEMA DE SUPORTE</span><strong className="coffee-readout"><img className="coffee-popover-icon" src="/assets/imgs/stacks/coffee.webp" alt="" aria-hidden="true" /> Café: 87%</strong><p>Operacional por mais uma reunião e meia.</p></>}
+          {activeTool === "build" && <><span className="popover-kicker">STATUS DO BUILD</span><strong onMouseEnter={startSideEye} onMouseLeave={stopSideEye}><span className="build-led" /> Na minha máquina funciona</strong></>}
           {activeTool === "bugs" && <><span className="popover-kicker">MONITOR DE BUGS</span><strong>3 bugs conhecidos</strong><p>Os desconhecidos estão em produção, se divertindo.</p></>}
           {activeTool === "deploy" && <><span className="popover-kicker">ÚLTIMO DEPLOY</span><strong>Há 2 horas</strong><p>Nada pegou fogo. Ainda.</p></>}
           {activeTool === "stacks" &&<><span className="popover-kicker">FERRAMENTAS CARREGADAS</span><div className="stack-chips">{["React", "Next.js", "Vue.js", "JavaScript", "TypeScript", "Node.js", "Express", "NestJS", "PHP", "Python", "PostgreSQL", "MySQL", "Docker", "Kubernetes", "ArgoCD", "GCP", "Salesforce Marketing Cloud", "Claude Code", "Cibersegurança", "Inteligência Artificial"].map((stack) => <span key={stack}>{stack}</span>)}</div></>}
@@ -154,7 +170,7 @@ function Home() {
           </div>
         </div>
       </section>
-      <footer className="site-footer">© {new Date().getFullYear()} Tiago Aderbal</footer>
+      <SiteFooter />
     </motion.div>
   );
 }

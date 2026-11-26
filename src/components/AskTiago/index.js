@@ -10,6 +10,23 @@ const DEMO_COMMANDS = {
   "!timeout": "TIMEOUT",
 };
 
+// Frases secretas: comparadas sem acento, pontuação ou maiúsculas.
+const SECRET_PHRASES = {
+  "this is the way": "MANDALORIAN",
+  "como deve ser": "MANDALORIAN", // dublagem brasileira
+  "e como deve ser": "MANDALORIAN",
+};
+
+function normalizePhrase(text) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9 ]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export default function AskTiago() {
   const [opened, setOpened] = useState(true);
   const [terminalState, setTerminalState] = useState(TERMINAL.IDLE);
@@ -24,7 +41,7 @@ export default function AskTiago() {
     setAnswer("");
     setErrorType(null);
 
-    const demoType = DEMO_COMMANDS[question.trim().toLowerCase()];
+    const demoType = DEMO_COMMANDS[question.trim().toLowerCase()] ?? SECRET_PHRASES[normalizePhrase(question)];
     if (demoType) {
       setQuestion("");
       setErrorType(demoType);

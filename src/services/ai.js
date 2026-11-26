@@ -12,6 +12,9 @@ export async function askToTiago(question) {
 
     clearTimeout(timeoutId);
 
+    // 429 vem do rate limit do Firewall da Vercel (corpo não é JSON da nossa API).
+    if (res.status === 429) return { type: "RATE_LIMIT" };
+
     const data = await res.json();
     return data;
   } catch (error) {

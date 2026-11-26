@@ -42,8 +42,9 @@ function isSuspicious(text) {
   return INJECTION_PATTERNS.some((pattern) => pattern.test(text));
 }
 
+// Flag "g": troca todas as ocorrências, não só a primeira.
 const leakPatterns =
-  /sou\s*(um|uma)?\s*(modelo|ia|assistente)\s*de\s*linguagem|como\s*(uma\s*)?ia|gemini|google\s*ai|groq|llama|gpt|openai/i;
+  /sou\s*(um|uma)?\s*(modelo|ia|assistente)\s*de\s*linguagem|como\s*(uma\s*)?ia|gemini|google\s*ai|groq|llama|gpt|openai/gi;
 
 function isRecoverableError(error) {
   const status = error?.status || error?.code;
@@ -109,13 +110,10 @@ export default async function handler(req, res) {
     }
 
     try {
-      let answer = await tryModel(model, trimmed);
+      const answer = (await tryModel(model, trimmed)).replace(leakPatterns, "ATLAS");
 
-      if (leakPatterns.test(answer)) {
-        answer = answer.replace(leakPatterns, "ATLAS");
-      }
-
-      return res.status(200).json({ type: "OK", answer, model });
+      // O modelo usado não vai para o cliente: seria justamente o nome que o filtro esconde.
+      return res.status(200).json({ type: "OK", answer });
     } catch (error) {
       lastError = error;
 

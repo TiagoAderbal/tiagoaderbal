@@ -1,0 +1,211 @@
+/* Página 404: gibi vermelho e preto, independente do tema claro/escuro. */
+.nf-page {
+  --nf-red: #b3121b;
+  --nf-red-bright: #e3232d;
+  --nf-black: #0d0d0d;
+  --nf-paper: #fff8ea;
+  --nf-yellow: #ffd23f;
+
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100vh - 76px);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: clamp(32px, 6vw, 72px) 16px;
+  background: radial-gradient(circle at 30% 40%, #2a0a0c 0%, var(--nf-black) 70%);
+  color: var(--nf-paper);
+}
+.nf-halftone {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: radial-gradient(rgba(227, 35, 45, 0.28) 1.6px, transparent 1.8px);
+  background-size: 14px 14px;
+  -webkit-mask-image: linear-gradient(115deg, #000 0%, transparent 70%);
+  mask-image: linear-gradient(115deg, #000 0%, transparent 70%);
+}
+
+.nf-panel {
+  width: min(1100px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+}
+
+/* ----- lado da arte ----- */
+.nf-art { position: relative; display: grid; justify-items: center; }
+.nf-code {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  color: transparent;
+  font-family: 'Bangers', 'Space Grotesk', sans-serif;
+  font-size: clamp(7rem, 22vw, 15rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  -webkit-text-stroke: 3px var(--nf-red-bright);
+  transform: translate(-50%, -58%) rotate(-6deg);
+  opacity: 0.55;
+  user-select: none;
+}
+.nf-mask {
+  position: relative;
+  z-index: 1;
+  width: clamp(210px, 32vw, 340px);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  filter: drop-shadow(0 18px 40px rgba(227, 35, 45, 0.35));
+  animation: nf-bob 3.2s ease-in-out infinite;
+}
+/* Aceita tanto o logo redondo quanto uma arte de corpo inteiro (retrato, fundo transparente). */
+.nf-mask img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(460px, 60vh);
+  object-fit: contain;
+  /* a arte termina cortada na cintura: o degradê faz o corte parecer proposital */
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+}
+.nf-mask:focus-visible { outline: 3px dashed var(--nf-yellow); outline-offset: 6px; border-radius: 12px; }
+.nf-mask.is-poked { animation: nf-poke 420ms cubic-bezier(0.3, 1.6, 0.5, 1), nf-bob 3.2s 420ms ease-in-out infinite; }
+
+/* ----- balões de fala ----- */
+.nf-balloon {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 12px 16px;
+  border: 3px solid var(--nf-black);
+  border-radius: 18px;
+  background: var(--nf-paper);
+  color: var(--nf-black);
+  box-shadow: 5px 5px 0 var(--nf-red);
+  font-family: 'Bangers', 'Space Grotesk', sans-serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+}
+.nf-balloon::after {
+  position: absolute;
+  bottom: -14px;
+  left: 28px;
+  width: 22px;
+  height: 22px;
+  border-right: 3px solid var(--nf-black);
+  border-bottom: 3px solid var(--nf-black);
+  background: var(--nf-paper);
+  content: "";
+  transform: skewX(-30deg) rotate(45deg);
+}
+.nf-balloon--art {
+  z-index: 2;
+  max-width: min(320px, 100%);
+  margin-top: 22px;
+  text-align: center;
+  transform: rotate(-2deg);
+}
+.nf-balloon--art::after { top: -14px; bottom: auto; left: 50%; transform: translateX(-50%) skewX(-30deg) rotate(225deg); }
+
+/* ----- lado do texto ----- */
+.nf-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.nf-kicker {
+  padding: 6px 10px;
+  background: var(--nf-red);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  transform: rotate(-1.5deg);
+  box-shadow: 3px 3px 0 var(--nf-paper);
+}
+.nf-copy h1 {
+  margin: 6px 0 0;
+  color: var(--nf-paper);
+  font-family: 'Bangers', 'Space Grotesk', sans-serif;
+  font-size: clamp(2.6rem, 6.4vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.98;
+  text-shadow: 4px 4px 0 var(--nf-red);
+}
+.nf-censor {
+  display: inline-block;
+  padding: 0 0.18em;
+  border: 0;
+  background: var(--nf-black);
+  color: var(--nf-yellow);
+  font: inherit;
+  line-height: 1.05;
+  text-shadow: none;
+  cursor: help;
+  box-shadow: 0 0 0 3px var(--nf-yellow);
+  transform: rotate(-3deg);
+  transition: transform 160ms ease;
+}
+.nf-censor:hover { transform: rotate(2deg) scale(1.04); }
+.nf-censor.is-revealed { background: var(--nf-yellow); color: var(--nf-black); font-size: 0.42em; vertical-align: middle; }
+.nf-text { max-width: 540px; margin: 0; color: #e9dfcf; font-size: 1.02rem; line-height: 1.7; }
+.nf-text code {
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(227, 35, 45, 0.18);
+  color: #ff8d92;
+  font-size: 0.9em;
+  word-break: break-all;
+}
+.nf-caption {
+  max-width: 520px;
+  padding: 12px 14px;
+  border: 2px solid var(--nf-black);
+  background: var(--nf-yellow);
+  color: var(--nf-black);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  box-shadow: 4px 4px 0 var(--nf-red);
+  transform: rotate(0.8deg);
+}
+.nf-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+.nf-button {
+  padding: 12px 18px;
+  border: 2px solid var(--nf-paper);
+  border-radius: 6px;
+  color: var(--nf-paper);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+.nf-button:hover { color: var(--nf-paper); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--nf-red-bright); }
+.nf-button--primary { border-color: var(--nf-red-bright); background: var(--nf-red-bright); color: #fff; }
+.nf-button--primary:hover { color: #fff; box-shadow: 4px 4px 0 var(--nf-paper); }
+.nf-fineprint { color: #8c8478; font-size: 0.72rem; }
+
+@keyframes nf-bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
+@keyframes nf-poke {
+  0% { transform: scale(1); }
+  30% { transform: scale(0.86) rotate(-10deg); }
+  60% { transform: scale(1.08) rotate(6deg); }
+  100% { transform: scale(1) rotate(-2deg); }
+}
+
+@media (max-width: 820px) {
+  .nf-panel { grid-template-columns: minmax(0, 1fr); }
+  .nf-art { padding-top: 12px; }
+  .nf-copy { align-items: stretch; }
+  .nf-kicker, .nf-balloon { align-self: flex-start; }
+  .nf-actions { flex-direction: column; }
+  .nf-button { text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nf-mask, .nf-mask.is-poked { animation: none; }
+}

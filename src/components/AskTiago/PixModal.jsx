@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import { QRCodeSVG } from "qrcode.react";
 
 const PIX_KEY = "39ef119c-f857-4def-b4bf-00508e817409";
 
@@ -11,10 +12,6 @@ export default function PixModal({ onClose }) {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }
-
-  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(
-    PIX_KEY,
-  )}&bgcolor=090909&color=d7af43&qzone=2`;
 
   const modal = (
     <div className="pix-modal-overlay" onClick={onClose}>
@@ -37,7 +34,17 @@ export default function PixModal({ onClose }) {
         </p>
 
         <div className="pix-modal-qr-frame">
-          <img src={qrUrl} alt="QR Code Pix" className="pix-modal-qr" />
+          {/* Gerado no navegador: a chave não passa por nenhum serviço de terceiros. */}
+          <QRCodeSVG
+            value={PIX_KEY}
+            size={220}
+            marginSize={2}
+            bgColor="#090909"
+            fgColor="#d7af43"
+            className="pix-modal-qr"
+            role="img"
+            aria-label="QR Code Pix"
+          />
         </div>
 
         <p className="pix-modal-subtitle">

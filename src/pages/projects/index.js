@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import projects from "../../data/projects.json";
 import "../blog/index.css";
 import "./index.css";
+import SiteFooter from "../../components/SiteFooter";
 
 export default function Projects() {
   const [category, setCategory] = useState("Todos");
@@ -32,9 +33,17 @@ export default function Projects() {
         </section>
 
         <section className="article-grid" aria-label="Projetos">
-          {visibleProjects.map((project) => (
+          {visibleProjects.map((project, index) => (
             <article className="article-card project-card" key={project.name}>
-              <img className="article-cover project-cover" src={project.image} alt="" />
+              <img
+                className="article-cover project-cover"
+                src={project.image}
+                alt=""
+                width="880"
+                height="422"
+                loading={index < 3 ? "eager" : "lazy"}
+                decoding="async"
+              />
               <div className="article-card-content">
                 <div className="article-meta"><span>{project.category}</span></div>
                 <h2>{project.name}</h2>
@@ -51,7 +60,7 @@ export default function Projects() {
           ))}
         </section>
 
-        <footer className="site-footer">© {new Date().getFullYear()} Tiago Aderbal</footer>
+        <SiteFooter />
       </main>
     </motion.div>
   );
