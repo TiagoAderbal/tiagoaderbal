@@ -3,6 +3,24 @@ import { createPortal } from "react-dom";
 
 // Quanto tempo a pessoa precisa ficar parada no rodapé para "ganhar" a cena extra.
 const WAIT_MS = 2000;
+// A cena só aparece uma vez por navegador; depois disso fica registrada aqui.
+const SEEN_KEY = "portfolio-post-credits-seen";
+
+function hasSeenScene() {
+  try {
+    return localStorage.getItem(SEEN_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function markSceneSeen() {
+  try {
+    localStorage.setItem(SEEN_KEY, "1");
+  } catch {
+    // Sem storage disponível: a cena pode reaparecer, sem problema.
+  }
+}
 
 function PostCreditsScene({ onClose }) {
   const closeRef = useRef(null);
@@ -21,7 +39,7 @@ function PostCreditsScene({ onClose }) {
       <div className="post-credits-screen" onClick={(event) => event.stopPropagation()}>
         <span className="post-credits-kicker" id="post-credits-title">CENA PÓS-CRÉDITOS</span>
         <img className="post-credits-logo" src="/assets/imgs/stacks/marvel.webp" alt="" aria-hidden="true" />
-        <strong className="post-credits-return">Tiago Aderbal retornará.</strong>
+        <strong className="post-credits-return">Tiago Aderbal will return.</strong>
         <button ref={closeRef} className="post-credits-close" type="button" onClick={onClose}>
           Acender as luzes da sala
         </button>
@@ -39,7 +57,7 @@ export default function SiteFooter() {
 
   useEffect(() => {
     const footer = footerRef.current;
-    if (!footer || !("IntersectionObserver" in window)) return undefined;
+    if (!footer || !("IntersectionObserver" in window) || hasSeenScene()) return undefined;
 
     let timer;
     const observer = new IntersectionObserver(
@@ -48,8 +66,10 @@ export default function SiteFooter() {
         if (!entry.isIntersecting || playedRef.current) return;
         timer = setTimeout(() => {
           // Só conta para quem rolou até aqui; página curta não tem "fim dos créditos".
-          if (window.scrollY < 80) return;
+          if (window.scrollY < 80 || hasSeenScene()) return;
           playedRef.current = true;
+          markSceneSeen();
+          observer.disconnect();
           setShowScene(true);
         }, WAIT_MS);
       },

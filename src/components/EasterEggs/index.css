@@ -185,13 +185,14 @@
 .post-credits-return {
   display: block;
   margin: 26px 0 0;
-  color: #fff;
+  /* imita a legenda de fim de créditos: sans bold, iniciais maiúsculas, letras bem espaçadas */
+  color: #f2f2ee;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.1rem, 3.6vw, 1.5rem);
+  font-size: clamp(0.95rem, 3vw, 1.2rem);
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  animation: post-credits-return 700ms 1.6s ease-out both;
+  letter-spacing: 0.22em;
+  text-transform: capitalize;
+  animation: post-credits-return 900ms 1.6s ease-out both;
 }
 .post-credits-close {
   margin-top: 28px;
@@ -207,7 +208,7 @@
 
 @keyframes post-credits-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes post-credits-bars { from { transform: translateY(0); } to { transform: translateY(var(--bar-shift)); } }
-@keyframes post-credits-return { from { opacity: 0; letter-spacing: 0.4em; } to { opacity: 1; letter-spacing: 0.08em; } }
+@keyframes post-credits-return { from { opacity: 0; letter-spacing: 0.45em; } to { opacity: 1; letter-spacing: 0.22em; } }
 
 @media (prefers-reduced-motion: reduce) {
   .assemble-flyer { display: none; }
