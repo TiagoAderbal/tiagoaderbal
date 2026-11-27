@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 // Quanto tempo a pessoa precisa ficar parada no rodapé para "ganhar" a cena extra.
-const WAIT_MS = 3000;
+const WAIT_MS = 2000;
 
 function PostCreditsScene({ onClose }) {
   const closeRef = useRef(null);
@@ -21,10 +21,6 @@ function PostCreditsScene({ onClose }) {
       <div className="post-credits-screen" onClick={(event) => event.stopPropagation()}>
         <span className="post-credits-kicker" id="post-credits-title">CENA PÓS-CRÉDITOS</span>
         <img className="post-credits-logo" src="/assets/imgs/stacks/marvel.webp" alt="" aria-hidden="true" />
-        <p className="post-credits-text">
-          Você ficou até o fim dos créditos. Respeito. O Tiago faz o mesmo com log de erro: lê até a última linha,
-          porque é sempre lá que está a pista do próximo bug.
-        </p>
         <strong className="post-credits-return">Tiago Aderbal retornará.</strong>
         <button ref={closeRef} className="post-credits-close" type="button" onClick={onClose}>
           Acender as luzes da sala
